@@ -32,6 +32,8 @@ This log records completed implementation slices and verification status.
 - Website pages: tenant-managed draft/published/archived pages with public published-page endpoints.
 - Public appointment booking: patient-facing booking endpoint restricted to active, public doctors and accepting hospitals.
 - Appointment payment tracking: appointment-level payment status and reference updates for manual hospital collection workflows.
+- Staff lifecycle: invitation, activation, suspension, and tenant ownership validation for staff status updates.
+- Appointment rescheduling: confirmed appointments can move to a collision-checked future slot with rescheduled status.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
