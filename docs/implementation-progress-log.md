@@ -112,10 +112,11 @@ This log records completed implementation slices and verification status.
 - Frontend route protection: login cookie, protected-route middleware, public hospital-route exceptions, and cookie/local-storage cleanup on sign-out.
 - Queue module completion: live queue-board frontend state, refresh/error handling, token hold/complete actions, and backend tenant-isolation/empty-board tests.
 - Appointment module completion: live appointment list frontend state, status filtering, lifecycle/payment backend tests, and rescheduling verification.
-- Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
+- Patient module completion: tenant-safe patient detail and update APIs, live patient search frontend, identifier/ABHA-aware records, and patient controller isolation tests.
+- Verification: clean full backend suite passes with 24 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
 
 - Appointment controller tests pass independently: 2 tests.
-- Full backend suite passes: 18 tests, 0 failures, 0 errors.
+- Full backend suite passes: 24 tests, 0 failures, 0 errors.
 - Frontend build verification pending because `frontend/node_modules` is not installed in the workspace.
