@@ -55,6 +55,9 @@ This log records completed implementation slices and verification status.
 - Frontend operations dashboard: role-oriented hospital workspace entry point with overview, appointments, queue, and patient views.
 - Public hospital frontend: profile/contact page with appointment entry point.
 - Public booking frontend: patient-facing appointment request form route.
+- Reception frontend: searchable queue board with patient calling action and priority visibility.
+- Doctor frontend: daily schedule, next patient, queue, and follow-up summary workspace.
+- Content frontend: website publishing dashboard with content, media, and social status views.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
