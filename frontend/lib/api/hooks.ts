@@ -12,6 +12,8 @@ export const usePatients=(slug:string,query:string)=>useQuery({queryKey:["patien
 export const useFollowUps=(slug:string)=>useQuery({queryKey:["follow-ups",slug],queryFn:()=>api.listFollowUps(slug),enabled:Boolean(slug)});
 export const useQueueBoard=(slug:string,date:string)=>useQuery({queryKey:["queue-board",slug,date],queryFn:()=>api.listQueue(slug,date),enabled:Boolean(slug&&date),refetchInterval:15000});
 export const useAppointmentReport=(slug:string)=>useQuery({queryKey:["appointment-report",slug],queryFn:()=>api.getAppointmentReport(slug),enabled:Boolean(slug)});
+export const useSubscription=(slug:string)=>useQuery({queryKey:["subscription",slug],queryFn:()=>api.getSubscription(slug),enabled:Boolean(slug)});
+export const usePaymentSettings=(slug:string)=>useQuery({queryKey:["payment-settings",slug],queryFn:()=>api.getPaymentSettings(slug),enabled:Boolean(slug)});
 export const useCreateAppointment=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createPublicAppointment(slug,payload)});
 export const useUpdateAppointmentStatus=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateAppointmentStatus(slug,id,payload)});
 export const useRescheduleAppointment=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.rescheduleAppointment(slug,id,payload)});
@@ -20,6 +22,7 @@ export const useCreateQueueToken=(slug:string,appointmentId:string)=>useMutation
 export const useUpdateQueueTokenStatus=(slug:string,tokenId:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateQueueTokenStatus(slug,tokenId,payload)});
 export const useInviteStaff=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.inviteStaff(slug,payload)});
 export const useUpdateSubscription=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateSubscription(slug,payload)});
+export const useUpdatePaymentSettings=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.updatePaymentSettings(slug,payload)});
 export const useCreateReminder=(slug:string,appointmentId:string)=>useMutation({mutationFn:(payload:unknown)=>api.createReminder(slug,appointmentId,payload)});
 export const useCreateFollowUp=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createFollowUp(slug,payload)});
 export const useUpdateFollowUpStatus=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateFollowUpStatus(slug,id,payload)});

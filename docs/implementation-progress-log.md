@@ -116,10 +116,11 @@ This log records completed implementation slices and verification status.
 - Follow-up module completion: live tenant-scoped worklist, status filtering, follow-up creation form, completion action, frontend API hooks, and controller isolation tests.
 - Doctor workspace completion: live date-scoped appointment schedule, queue summary, next-patient view, loading/error/empty states, refresh, and completion/no-show actions.
 - Notifications module completion: live delivery inbox, status filtering, queue composer, consent flag capture, failed-message retry, and notification controller isolation tests.
+- Billing module completion: live SaaS subscription summary, separate hospital appointment payment configuration, bank/UPI/payment-link fields, save feedback, and billing controller isolation tests.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
 
 - Appointment controller tests pass independently: 2 tests.
-- Full backend suite passes: 28 tests, 0 failures, 0 errors.
+- Full backend suite passes: 31 tests, 0 failures, 0 errors.
 - Frontend build verification pending because `frontend/node_modules` is not installed in the workspace.
