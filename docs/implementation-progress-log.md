@@ -12,6 +12,7 @@ This log records completed implementation slices and verification status.
 - Patient and appointments: patient capture with hospital patient ID and optional ABHA ID, appointment creation, requested status, patient reuse by tenant phone, and duplicate doctor-slot protection. Pending commit.
 - Appointment lifecycle: controlled status transitions for confirmation, check-in, completion, cancellation, no-show, and reschedule. Full suite stabilized at 17 passing tests.
 - Queue foundation: token generation for checked-in appointments, doctor/date queue listing, and priority marking with required configurable reason enum and note.
+- Queue operations: patient-safe queue DTOs and token state actions for held, called, skipped, completed, cancelled, and no-show workflows.
 
 ## Verification
 
