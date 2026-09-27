@@ -1,0 +1,2 @@
+package com.hms.staff;
+public enum StaffRole { HOSPITAL_OWNER, ADMINISTRATOR, RECEPTION, DOCTOR, CONTENT_MARKETING }

@@ -9,7 +9,7 @@ This log records completed implementation slices and verification status.
 - Doctors: doctor profiles, department mapping, public visibility, cross-tenant validation. Commit `ff31bc6`.
 - Scheduling rules: recurring doctor availability and leave periods. Commit `ca7aac9`.
 - Slot calculation: available-slot query with leave exclusion. Commit `438b545`.
-- Patient and appointments: patient capture with hospital patient ID and optional ABHA ID, appointment creation, requested status, patient reuse by tenant phone, and duplicate doctor-slot protection. Pending commit.
+- Patient and appointments: patient capture with hospital patient ID and optional ABHA ID, appointment creation, requested status, patient reuse by tenant phone, and duplicate doctor-slot protection.
 - Appointment lifecycle: controlled status transitions for confirmation, check-in, completion, cancellation, no-show, and reschedule. Full suite stabilized at 17 passing tests.
 - Queue foundation: token generation for checked-in appointments, doctor/date queue listing, and priority marking with required configurable reason enum and note.
 - Queue operations: patient-safe queue DTOs and token state actions for held, called, skipped, completed, cancelled, and no-show workflows.
@@ -27,9 +27,12 @@ This log records completed implementation slices and verification status.
 - Doctor services: validated tenant-scoped doctor-to-service assignment endpoint.
 - Public directory: patient-safe published doctors, active departments, and public services endpoints with tenant isolation.
 - Patient identifiers: tenant configuration for hospital-defined patient ID labels, visibility/required rules, formats, ABHA enablement, requirement, and consent text.
+- Staff memberships: tenant-scoped staff invitations with hospital roles and invitation status.
+- Appointment payments: hospital-owned payment mode and bank, UPI, payment-link, or manual instructions for hospitals without a gateway API.
+- Website pages: tenant-managed draft/published/archived pages with public published-page endpoints.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
 
 - Appointment controller tests pass independently: 2 tests.
-- Full backend suite passes: 17 tests, 0 failures, 0 errors.
+- Full backend suite passes: 18 tests, 0 failures, 0 errors.
