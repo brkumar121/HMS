@@ -79,6 +79,16 @@ This log records completed implementation slices and verification status.
 - Subscription frontend: plan, usage, billing-period, and account-state workspace.
 - Reminders frontend: appointment reminder scheduling and delivery workspace.
 - Audit frontend: tenant governance and change-history workspace.
+- Authentication frontend: staff sign-in entry screen.
+- Onboarding frontend: hospital setup checklist and initial profile form.
+- Appointment detail frontend: patient, visit, status, and rescheduling workspace.
+- Patient history frontend: identifiers, appointment history, and follow-up view.
+- Reports frontend: KPI summary and operational trend visualization.
+- Notification composer frontend: SMS, email, and WhatsApp message queue form.
+- Public services frontend: patient-facing hospital service directory.
+- Public content frontend: hospital updates listing.
+- Public pages frontend: hospital information page.
+- Content preview frontend: publish-ready content review and sharing workflow.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
