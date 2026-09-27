@@ -93,6 +93,7 @@ export const createSubscriptionInvoice = (slug: string, payload: unknown) => api
 export const updateSubscriptionInvoiceStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/subscription/invoices/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });
 export const updatePatientIdentifiers = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`, { method: "PUT", body: JSON.stringify(payload) });
 export const getPatientIdentifiers = (slug: string) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`);
+export const updatePatientCommunicationConsent = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/patients/${id}/communication-consent`, { method: "PUT", body: JSON.stringify(payload) });
 export const getWebsiteSettings = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/settings`);
 export const updateWebsiteSettings = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/settings`, { method: "PUT", body: JSON.stringify(payload) });
 export const listCustomDomains = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/domains`);
