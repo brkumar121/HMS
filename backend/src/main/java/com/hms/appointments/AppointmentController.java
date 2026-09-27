@@ -17,6 +17,7 @@ public class AppointmentController {
   if(!appointment.getTenantId().equals(tenantId(tenantSlug))) throw new IllegalArgumentException("Appointment does not belong to hospital");
   appointment.updateStatus(request.status()); return appointments.save(appointment);
  }
+ @PatchMapping("/{appointmentId}/payment") public Appointment updatePayment(@PathVariable String tenantSlug,@PathVariable UUID appointmentId,@Valid @RequestBody UpdateAppointmentPaymentRequest request){Appointment appointment=appointments.findById(appointmentId).orElseThrow(()->new IllegalArgumentException("Appointment not found"));if(!appointment.getTenantId().equals(tenantId(tenantSlug)))throw new IllegalArgumentException("Appointment does not belong to hospital");appointment.updatePayment(request);return appointments.save(appointment);}
  @PostMapping @ResponseStatus(HttpStatus.CREATED)
  public Appointment create(@PathVariable String tenantSlug,@Valid @RequestBody CreateAppointmentRequest request){
   UUID tenantId=tenantId(tenantSlug);
