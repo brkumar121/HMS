@@ -29,3 +29,7 @@ hms:
     enforce: ${HMS_SECURITY_ENFORCE:true}
   cors:
     allowed-origins: ${HMS_CORS_ALLOWED_ORIGINS:http://localhost:3000}
+  notifications:
+    provider: ${HMS_NOTIFICATION_PROVIDER:mock}
+    dispatch-enabled: ${HMS_NOTIFICATION_DISPATCH_ENABLED:false}
+    dispatch-interval-ms: ${HMS_NOTIFICATION_DISPATCH_INTERVAL_MS:30000}

@@ -129,6 +129,7 @@ This log records completed implementation slices and verification status.
 - Five-module workflow batch: branch activation, mobile website/page status, patient reminder viewing, appointment detail actions, and website page administration consumption connected to tenant APIs.
 - Ten-screen mobile role batch: live admin branches/staff/approvals, platform billing/health, doctor follow-ups/availability/patient context, and reception appointment search/check-in screens.
 - Production hardening: enforced security now fails fast without a configured non-development authentication secret, and the API emits content-type, clickjacking, and HSTS security headers.
+- Notification delivery foundation: configurable provider selection, safe mock provider, scheduled queued-message dispatcher, provider failure capture, and retry-compatible status transitions.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
