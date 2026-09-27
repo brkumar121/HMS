@@ -518,6 +518,8 @@ Done when:
 
 Goal: support repeat consultation and missed-care recovery workflows without introducing full EMR scope.
 
+Progress: Follow-up creation, tenant validation, worklist listing, date range, priority, responsible team, notes, and status updates are implemented.
+
 Build:
 
 - Follow-up creation from appointment and patient profile.
