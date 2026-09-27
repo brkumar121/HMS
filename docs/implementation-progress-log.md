@@ -47,6 +47,8 @@ This log records completed implementation slices and verification status.
 - Public content detail: published website content can be opened by tenant and slug.
 - Notification retry: failed messages can be safely returned to the queued state.
 - Social sync state: enabled connections expose a tenant-safe sync trigger and timestamp update.
+- SaaS subscriptions: tenant-scoped plan, status, period-end, and appointment-limit configuration.
+- Appointment reminders: tenant-scoped scheduled SMS, email, or WhatsApp reminder records with future-time validation.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification

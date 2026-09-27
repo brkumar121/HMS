@@ -1,0 +1,1 @@
+create table tenant_subscriptions (tenant_id uuid primary key references tenants(id) on delete cascade, plan_key varchar(80) not null, status varchar(30) not null, current_period_end date, appointment_limit integer, updated_at timestamp with time zone not null);
