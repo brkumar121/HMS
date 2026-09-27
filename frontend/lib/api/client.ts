@@ -38,6 +38,7 @@ export const createPublicAppointment = (slug: string, payload: unknown) => apiRe
 export const listAppointments = (slug: string) => apiRequest(`/api/hospitals/${slug}/appointments`);
 export const searchAppointments = (slug: string, query: string) => apiRequest(`/api/hospitals/${slug}/appointment-search?patientName=${encodeURIComponent(query)}`);
 export const searchPatients = (slug: string, query: string) => apiRequest(`/api/hospitals/${slug}/patients?query=${encodeURIComponent(query)}`);
+export const listFollowUps = (slug: string) => apiRequest(`/api/hospitals/${slug}/follow-ups`);
 export const listQueue = (slug: string, date: string) => apiRequest(`/api/hospitals/${slug}/queue-board?date=${encodeURIComponent(date)}`);
 export const listStaff = (slug: string) => apiRequest(`/api/hospitals/${slug}/staff`);
 export const listBranches = (slug: string) => apiRequest(`/api/hospitals/${slug}/branches`);
@@ -68,6 +69,8 @@ export const updateQueueTokenStatus = (slug: string, tokenId: string, payload: u
 export const queueNotification = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/notifications`, { method: "POST", body: JSON.stringify(payload) });
 export const retryNotification = (slug: string, id: string) => apiRequest(`/api/hospitals/${slug}/notifications/${id}/retry`, { method: "POST" });
 export const createReminder = (slug: string, appointmentId: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/reminders/appointments/${appointmentId}`, { method: "POST", body: JSON.stringify(payload) });
+export const createFollowUp = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/follow-ups`, { method: "POST", body: JSON.stringify(payload) });
+export const updateFollowUpStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/follow-ups/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });
 export const syncSocialConnection = (slug: string, id: string) => apiRequest(`/api/hospitals/${slug}/social/connections/${id}/sync`, { method: "POST" });
 export const updatePaymentSettings = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/appointment-payments`, { method: "PUT", body: JSON.stringify(payload) });
 export const updateSubscription = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/subscription`, { method: "PUT", body: JSON.stringify(payload) });

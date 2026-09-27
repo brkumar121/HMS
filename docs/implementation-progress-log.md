@@ -113,10 +113,11 @@ This log records completed implementation slices and verification status.
 - Queue module completion: live queue-board frontend state, refresh/error handling, token hold/complete actions, and backend tenant-isolation/empty-board tests.
 - Appointment module completion: live appointment list frontend state, status filtering, lifecycle/payment backend tests, and rescheduling verification.
 - Patient module completion: tenant-safe patient detail and update APIs, live patient search frontend, identifier/ABHA-aware records, and patient controller isolation tests.
-- Verification: clean full backend suite passes with 24 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
+- Follow-up module completion: live tenant-scoped worklist, status filtering, follow-up creation form, completion action, frontend API hooks, and controller isolation tests.
+- Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
 
 - Appointment controller tests pass independently: 2 tests.
-- Full backend suite passes: 24 tests, 0 failures, 0 errors.
+- Full backend suite passes: 26 tests, 0 failures, 0 errors.
 - Frontend build verification pending because `frontend/node_modules` is not installed in the workspace.

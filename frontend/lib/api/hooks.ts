@@ -9,6 +9,7 @@ export const usePublicPages=(slug:string)=>useQuery({queryKey:["public-pages",sl
 export const useDoctorSlots=(slug:string,doctorId:string,date:string)=>useQuery({queryKey:["doctor-slots",slug,doctorId,date],queryFn:()=>api.getDoctorSlots(slug,doctorId,date),enabled:Boolean(slug&&doctorId&&date)});
 export const useAppointments=(slug:string)=>useQuery({queryKey:["appointments",slug],queryFn:()=>api.listAppointments(slug),enabled:Boolean(slug)});
 export const usePatients=(slug:string,query:string)=>useQuery({queryKey:["patients",slug,query],queryFn:()=>api.searchPatients(slug,query),enabled:Boolean(slug)});
+export const useFollowUps=(slug:string)=>useQuery({queryKey:["follow-ups",slug],queryFn:()=>api.listFollowUps(slug),enabled:Boolean(slug)});
 export const useQueueBoard=(slug:string,date:string)=>useQuery({queryKey:["queue-board",slug,date],queryFn:()=>api.listQueue(slug,date),enabled:Boolean(slug&&date),refetchInterval:15000});
 export const useAppointmentReport=(slug:string)=>useQuery({queryKey:["appointment-report",slug],queryFn:()=>api.getAppointmentReport(slug),enabled:Boolean(slug)});
 export const useCreateAppointment=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createPublicAppointment(slug,payload)});
@@ -20,5 +21,7 @@ export const useUpdateQueueTokenStatus=(slug:string,tokenId:string)=>useMutation
 export const useInviteStaff=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.inviteStaff(slug,payload)});
 export const useUpdateSubscription=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateSubscription(slug,payload)});
 export const useCreateReminder=(slug:string,appointmentId:string)=>useMutation({mutationFn:(payload:unknown)=>api.createReminder(slug,appointmentId,payload)});
+export const useCreateFollowUp=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createFollowUp(slug,payload)});
+export const useUpdateFollowUpStatus=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateFollowUpStatus(slug,id,payload)});
 export const useQueueNotification=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.queueNotification(slug,payload)});
 export const useSyncSocialConnection=(slug:string,id:string)=>useMutation({mutationFn:()=>api.syncSocialConnection(slug,id)});
