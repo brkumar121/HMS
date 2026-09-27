@@ -44,6 +44,9 @@ This log records completed implementation slices and verification status.
 - Availability correctness: generated slots now exclude existing non-cancelled appointments as well as leave periods.
 - Queue board: tenant-wide date-based queue view ordered by priority and token number.
 - Public hospital profile: published contact/profile data is available only for accepting hospitals.
+- Public content detail: published website content can be opened by tenant and slug.
+- Notification retry: failed messages can be safely returned to the queued state.
+- Social sync state: enabled connections expose a tenant-safe sync trigger and timestamp update.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
