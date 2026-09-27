@@ -1,0 +1,3 @@
+package com.hms.auth;
+import java.nio.charset.StandardCharsets; import java.util.*; import javax.crypto.Mac; import javax.crypto.spec.SecretKeySpec;
+final class MessageSigner {static boolean matches(String value,String expected,String secret)throws Exception{Mac mac=Mac.getInstance("HmacSHA256");mac.init(new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8),"HmacSHA256"));String actual=Base64.getUrlEncoder().withoutPadding().encodeToString(mac.doFinal(value.getBytes(StandardCharsets.UTF_8)));return java.security.MessageDigest.isEqual(actual.getBytes(StandardCharsets.UTF_8),expected.getBytes(StandardCharsets.UTF_8));}}
