@@ -94,6 +94,8 @@ export const updateSubscriptionInvoiceStatus = (slug: string, id: string, payloa
 export const updatePatientIdentifiers = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`, { method: "PUT", body: JSON.stringify(payload) });
 export const getPatientIdentifiers = (slug: string) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`);
 export const updatePatientCommunicationConsent = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/patients/${id}/communication-consent`, { method: "PUT", body: JSON.stringify(payload) });
+export const getPatientPrivacyStatus = (slug: string, id: string) => apiRequest(`/api/hospitals/${slug}/patients/${id}/privacy`);
+export const anonymizePatient = (slug: string, id: string) => apiRequest(`/api/hospitals/${slug}/patients/${id}/privacy`, { method: "DELETE" });
 export const getWebsiteSettings = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/settings`);
 export const listWebsiteThemeSnapshots = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/theme-snapshots`);
 export const createWebsiteThemeSnapshot = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/theme-snapshots`, { method: "POST" });
