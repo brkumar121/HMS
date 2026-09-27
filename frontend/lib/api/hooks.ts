@@ -40,6 +40,9 @@ export const useUpdateSubscriptionInvoiceStatus=(slug:string)=>useMutation({muta
 export const usePaymentSettings=(slug:string)=>useQuery({queryKey:["payment-settings",slug],queryFn:()=>api.getPaymentSettings(slug),enabled:Boolean(slug)});
 export const useCreateAppointment=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createPublicAppointment(slug,payload)});
 export const usePublicAppointmentStatus=(slug:string,appointmentId:string,phone:string)=>useQuery({queryKey:["public-appointment-status",slug,appointmentId,phone],queryFn:()=>api.getPublicAppointmentStatus(slug,appointmentId,phone),enabled:Boolean(slug&&appointmentId&&phone)});
+export const useJoinPublicWaitlist=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.joinPublicWaitlist(slug,payload)});
+export const useWaitlist=(slug:string)=>useQuery({queryKey:["waitlist",slug],queryFn:()=>api.listWaitlist(slug),enabled:Boolean(slug)});
+export const useUpdateWaitlistStatus=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.updateWaitlistStatus(slug,id,payload)});
 export const useUpdateAppointmentStatus=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateAppointmentStatus(slug,id,payload)});
 export const useRescheduleAppointment=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.rescheduleAppointment(slug,id,payload)});
 export const useUpdateAppointmentPayment=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateAppointmentPayment(slug,id,payload)});

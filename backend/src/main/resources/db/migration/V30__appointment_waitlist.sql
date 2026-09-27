@@ -1,0 +1,2 @@
+create table appointment_waitlist (id uuid primary key, tenant_id uuid not null references tenants(id) on delete cascade, patient_id uuid not null references patients(id), doctor_id uuid not null references doctors(id), requested_date date not null, reason varchar(500), priority boolean not null, status varchar(30) not null, created_at timestamp with time zone not null, updated_at timestamp with time zone not null);
+create index idx_waitlist_tenant_date on appointment_waitlist(tenant_id, requested_date, status);
