@@ -5,6 +5,7 @@ import com.hms.departments.DepartmentRepository;
 import com.hms.tenancy.Tenant;
 import com.hms.tenancy.TenantNotFoundException;
 import com.hms.tenancy.TenantRepository;
+import com.hms.billing.PlanLimitService;
 import jakarta.validation.Valid;
 import java.util.HashSet;
 import java.util.List;
@@ -25,16 +26,17 @@ public class DoctorController {
     private final TenantRepository tenants;
     private final DoctorRepository doctors;
     private final DepartmentRepository departments;
-    private final DoctorDepartmentRepository mappings;
+    private final DoctorDepartmentRepository mappings; private final PlanLimitService planLimits;
 
     public DoctorController(TenantRepository tenants, DoctorRepository doctors, DepartmentRepository departments,
-                            DoctorDepartmentRepository mappings) {
-        this.tenants = tenants; this.doctors = doctors; this.departments = departments; this.mappings = mappings;
+                            DoctorDepartmentRepository mappings, PlanLimitService planLimits) {
+        this.tenants = tenants; this.doctors = doctors; this.departments = departments; this.mappings = mappings; this.planLimits = planLimits;
     }
 
     @GetMapping
     public List<DoctorDto> list(@PathVariable String tenantSlug) {
         UUID tenantId = tenantId(tenantSlug);
+        planLimits.checkDoctor(tenantId);
         return doctors.findAllByTenantIdOrderByDisplayName(tenantId).stream().map(this::dto).toList();
     }
 
