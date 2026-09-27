@@ -111,6 +111,7 @@ This log records completed implementation slices and verification status.
 - Frontend authentication integration: login calls backend auth, stores the bearer session, attaches authorization to API requests, detects missing sessions, and provides sign-out behavior.
 - Frontend route protection: login cookie, protected-route middleware, public hospital-route exceptions, and cookie/local-storage cleanup on sign-out.
 - Queue module completion: live queue-board frontend state, refresh/error handling, token hold/complete actions, and backend tenant-isolation/empty-board tests.
+- Appointment module completion: live appointment list frontend state, status filtering, lifecycle/payment backend tests, and rescheduling verification.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
