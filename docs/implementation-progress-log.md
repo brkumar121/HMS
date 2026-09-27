@@ -49,6 +49,9 @@ This log records completed implementation slices and verification status.
 - Social sync state: enabled connections expose a tenant-safe sync trigger and timestamp update.
 - SaaS subscriptions: tenant-scoped plan, status, period-end, and appointment-limit configuration.
 - Appointment reminders: tenant-scoped scheduled SMS, email, or WhatsApp reminder records with future-time validation.
+- Booking policy enforcement: subscription pause/cancellation/appointment limits now block new bookings.
+- Patient intake enforcement: configured hospital ID and ABHA required rules now apply to staff and public booking.
+- Tenant onboarding: platform tenant creation endpoint with slug and contact validation.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
