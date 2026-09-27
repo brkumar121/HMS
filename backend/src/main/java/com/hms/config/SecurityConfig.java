@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import com.hms.auth.BearerTokenFilter;
+import com.hms.auth.TenantAccessFilter;
 import org.springframework.core.env.Environment;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -23,7 +24,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfig {
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http, Environment environment, BearerTokenFilter bearerTokenFilter) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity http, Environment environment, BearerTokenFilter bearerTokenFilter, TenantAccessFilter tenantAccessFilter) throws Exception {
         boolean enforce = Boolean.parseBoolean(environment.getProperty("hms.security.enforce", "false"));
         http
                 .csrf(AbstractHttpConfigurer::disable)
@@ -37,7 +38,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/public/**").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
                         .anyRequest().access((authentication, context) -> new org.springframework.security.authorization.AuthorizationDecision(!enforce || authentication.get().isAuthenticated()))
-                ).addFilterBefore(bearerTokenFilter, UsernamePasswordAuthenticationFilter.class);
+                ).addFilterBefore(bearerTokenFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterAfter(tenantAccessFilter, BearerTokenFilter.class);
 
         return http.build();
     }

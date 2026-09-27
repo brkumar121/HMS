@@ -139,3 +139,4 @@ This log records completed implementation slices and verification status.
 - Full backend suite passes: 39 tests, 0 failures, 0 errors.
 - Production gate remaining: configure real provider credentials, rate limiting/anti-spam, backups/restore, monitoring/error tracking, frontend dependency installation/build, and external security/accessibility review.
 - Frontend build verification pending because `frontend/node_modules` is not installed in the workspace.
+- Tenant boundary enforcement: authenticated hospital tokens now carry a tenant authority and a centralized filter rejects cross-hospital access attempts on staff routes with a structured 403 response.
