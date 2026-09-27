@@ -114,6 +114,7 @@ This log records completed implementation slices and verification status.
 - Appointment module completion: live appointment list frontend state, status filtering, lifecycle/payment backend tests, and rescheduling verification.
 - Patient module completion: tenant-safe patient detail and update APIs, live patient search frontend, identifier/ABHA-aware records, and patient controller isolation tests.
 - Follow-up module completion: live tenant-scoped worklist, status filtering, follow-up creation form, completion action, frontend API hooks, and controller isolation tests.
+- Doctor workspace completion: live date-scoped appointment schedule, queue summary, next-patient view, loading/error/empty states, refresh, and completion/no-show actions.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
