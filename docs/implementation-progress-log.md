@@ -41,6 +41,9 @@ This log records completed implementation slices and verification status.
 - Public availability: patient-facing slot lookup for accepting hospitals and active, public doctors.
 - Appointment search: staff search by patient name, appointment date, and status.
 - Patient search: tenant-scoped lookup by name, phone, hospital patient ID, or ABHA ID.
+- Availability correctness: generated slots now exclude existing non-cancelled appointments as well as leave periods.
+- Queue board: tenant-wide date-based queue view ordered by priority and token number.
+- Public hospital profile: published contact/profile data is available only for accepting hospitals.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification

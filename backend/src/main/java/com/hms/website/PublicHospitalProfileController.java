@@ -1,0 +1,3 @@
+package com.hms.website;
+import com.hms.tenancy.*; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/public/hospitals/{tenantSlug}/profile") public class PublicHospitalProfileController {private final TenantRepository tenants;public PublicHospitalProfileController(TenantRepository t){tenants=t;} @GetMapping public TenantDto profile(@PathVariable String tenantSlug){return tenants.findBySlug(tenantSlug).filter(t->t.getStatus()!=TenantStatus.SUSPENDED&&t.getStatus()!=TenantStatus.CANCELLED&&t.getStatus()!=TenantStatus.EXPIRED).map(TenantDto::from).orElseThrow(()->new IllegalArgumentException("Hospital profile not available"));}}

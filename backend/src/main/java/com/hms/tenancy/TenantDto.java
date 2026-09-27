@@ -11,7 +11,7 @@ public record TenantDto(
         String primaryEmail,
         String primaryPhone
 ) {
-    static TenantDto from(Tenant tenant) {
+    public static TenantDto from(Tenant tenant) {
         return new TenantDto(
                 tenant.getId(),
                 tenant.getSlug(),
