@@ -2,7 +2,7 @@ create table queue_tokens (
     id uuid primary key,
     tenant_id uuid not null references tenants(id) on delete cascade,
     appointment_id uuid not null references appointments(id) on delete cascade,
-    doctor_id uuid not null references doctors(id),
+    doctor_id uuid not null references doctors(id) on delete cascade,
     token_date date not null,
     token_number integer not null,
     status varchar(30) not null,
