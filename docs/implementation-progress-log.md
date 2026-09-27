@@ -124,6 +124,7 @@ This log records completed implementation slices and verification status.
 - Hospital directory module completion: live tenant department, doctor, and service lists with API-backed creation flows replacing static directory screens.
 - Five-module operations batch: live branch directory, staff directory, reminder worklist, doctor availability view, and public patient-facing service directory connected to tenant APIs.
 - Five-module launch batch: tenant onboarding creation, platform hospital account listing, hospital ID and ABHA settings, live public information pages, and dedicated appointment search hook connected to the API.
+- Five-module workflow batch: staff activation/suspension, live queue display with call action, reception payment verification, reminder scheduling for appointments, and public website page consumption workflows.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification

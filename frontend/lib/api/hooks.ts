@@ -14,6 +14,7 @@ export const useDepartments=(slug:string)=>useQuery({queryKey:["departments",slu
 export const useDoctors=(slug:string)=>useQuery({queryKey:["doctors",slug],queryFn:()=>api.listDoctors(slug),enabled:Boolean(slug)});
 export const useServices=(slug:string)=>useQuery({queryKey:["services",slug],queryFn:()=>api.listServices(slug),enabled:Boolean(slug)});
 export const useStaff=(slug:string)=>useQuery({queryKey:["staff",slug],queryFn:()=>api.listStaff(slug),enabled:Boolean(slug)});
+export const useUpdateStaffStatus=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.updateStaffStatus(slug,id,payload)});
 export const useBranches=(slug:string)=>useQuery({queryKey:["branches",slug],queryFn:()=>api.listBranches(slug),enabled:Boolean(slug)});
 export const useReminders=(slug:string)=>useQuery({queryKey:["reminders",slug],queryFn:()=>api.listReminders(slug),enabled:Boolean(slug)});
 export const useDoctorAvailability=(slug:string,doctorId:string)=>useQuery({queryKey:["doctor-availability",slug,doctorId],queryFn:()=>api.listDoctorAvailability(slug,doctorId),enabled:Boolean(slug&&doctorId)});
