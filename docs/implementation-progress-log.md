@@ -130,6 +130,7 @@ This log records completed implementation slices and verification status.
 - Ten-screen mobile role batch: live admin branches/staff/approvals, platform billing/health, doctor follow-ups/availability/patient context, and reception appointment search/check-in screens.
 - Production hardening: enforced security now fails fast without a configured non-development authentication secret, and the API emits content-type, clickjacking, and HSTS security headers.
 - Notification delivery foundation: configurable provider selection, safe mock provider, scheduled queued-message dispatcher, provider failure capture, and retry-compatible status transitions.
+- Public abuse protection and observability: configurable per-client rate limiting for public appointment submissions, `Retry-After` responses, and request correlation IDs exposed in responses and MDC logs.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
