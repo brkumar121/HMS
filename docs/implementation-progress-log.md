@@ -34,6 +34,9 @@ This log records completed implementation slices and verification status.
 - Appointment payment tracking: appointment-level payment status and reference updates for manual hospital collection workflows.
 - Staff lifecycle: invitation, activation, suspension, and tenant ownership validation for staff status updates.
 - Appointment rescheduling: confirmed appointments can move to a collision-checked future slot with rescheduled status.
+- Notification operations: tenant-safe status updates for queued, sent, failed, and cancelled messages.
+- Social connection lifecycle: tenant-safe enable/disable controls for hospital social handles.
+- Branch operations: tenant-safe branch activation and deactivation controls.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
