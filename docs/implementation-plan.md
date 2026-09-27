@@ -490,6 +490,8 @@ Done when:
 
 Goal: support appointment request, confirmation, reschedule, cancellation, check-in, completion, and no-show.
 
+Progress: Patient capture and initial appointment creation are implemented. The current slice supports tenant-scoped patient reuse by phone, hospital patient ID and optional ABHA capture, requested status, source, reason, notes, and doctor-slot duplicate protection.
+
 Build:
 
 - Patient record creation and lookup.
@@ -839,7 +841,7 @@ Maintain a short progress checklist as chunks are completed:
 [ ] Chunk 3 - Hospital Onboarding And Profile
 [~] Chunk 4 - Users, Departments, Doctors, Services (departments and doctor profiles complete)
 [~] Chunk 5 - Doctor Availability And Scheduling Rules (availability, leave periods, and slot calculation complete)
-[ ] Chunk 6 - Appointment Core Workflow
+[~] Chunk 6 - Appointment Core Workflow (patient capture and initial appointment creation complete)
 [ ] Chunk 7 - Queue Tokens And Prioritization
 [ ] Chunk 8 - Doctor Workspace
 [ ] Chunk 9 - Website Theme And Publishing
