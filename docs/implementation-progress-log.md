@@ -61,6 +61,9 @@ This log records completed implementation slices and verification status.
 - Hospital administration frontend: profile, departments, doctors, identifiers, and access settings workspace.
 - Patient portal frontend: upcoming visit, history, patient ID, and appointment discovery workspace.
 - Platform owner frontend: hospital account, subscription, revenue, volume, and support overview.
+- Public doctor directory frontend: specialist discovery and booking entry point.
+- Billing frontend: subscription overview and hospital appointment payment configuration.
+- Communications frontend: notification and reminder delivery activity with queued, sent, and failed states.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
