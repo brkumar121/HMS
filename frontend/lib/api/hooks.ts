@@ -14,6 +14,8 @@ export const usePatients=(slug:string,query:string)=>useQuery({queryKey:["patien
 export const useFollowUps=(slug:string)=>useQuery({queryKey:["follow-ups",slug],queryFn:()=>api.listFollowUps(slug),enabled:Boolean(slug)});
 export const useQueueBoard=(slug:string,date:string)=>useQuery({queryKey:["queue-board",slug,date],queryFn:()=>api.listQueue(slug,date),enabled:Boolean(slug&&date),refetchInterval:15000});
 export const useAppointmentReport=(slug:string)=>useQuery({queryKey:["appointment-report",slug],queryFn:()=>api.getAppointmentReport(slug),enabled:Boolean(slug)});
+export const useQueueReport=(slug:string)=>useQuery({queryKey:["queue-report",slug],queryFn:()=>api.getQueueReport(slug),enabled:Boolean(slug)});
+export const useAuditLog=(slug:string)=>useQuery({queryKey:["audit-log",slug],queryFn:()=>api.getAuditLog(slug),enabled:Boolean(slug)});
 export const useSubscription=(slug:string)=>useQuery({queryKey:["subscription",slug],queryFn:()=>api.getSubscription(slug),enabled:Boolean(slug)});
 export const usePaymentSettings=(slug:string)=>useQuery({queryKey:["payment-settings",slug],queryFn:()=>api.getPaymentSettings(slug),enabled:Boolean(slug)});
 export const useCreateAppointment=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createPublicAppointment(slug,payload)});

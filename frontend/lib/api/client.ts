@@ -52,6 +52,7 @@ export const listSocialConnections = (slug: string) => apiRequest(`/api/hospital
 export const createSocialConnection = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/social/connections`, { method: "POST", body: JSON.stringify(payload) });
 export const updateSocialConnection = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/social/connections/${id}`, { method: "PATCH", body: JSON.stringify(payload) });
 export const getAppointmentReport = (slug: string) => apiRequest(`/api/hospitals/${slug}/reports/appointments`);
+export const getQueueReport = (slug: string) => apiRequest(`/api/hospitals/${slug}/reports/queue`);
 export const getAuditLog = (slug: string) => apiRequest(`/api/hospitals/${slug}/reports/audit`);
 export const createTenant = (payload: unknown) => apiRequest(`/api/platform/tenants`, { method: "POST", body: JSON.stringify(payload) });
 export const inviteStaff = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/staff`, { method: "POST", body: JSON.stringify(payload) });

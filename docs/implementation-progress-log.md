@@ -120,10 +120,11 @@ This log records completed implementation slices and verification status.
 - Website theme and publishing completion: live tenant branding editor, publish toggle, public published-settings endpoint, themed hospital route rendering, and website settings isolation tests.
 - Website content module completion: live categorized content library, draft/published filtering, content creation form, public published-content listing, corrected scoped API contract, and content isolation tests.
 - Social integration module completion: live tenant social directory, channel creation, enable/disable controls, provider sync actions, and social connection isolation tests.
+- Reports and audit module completion: live appointment KPIs, status breakdown, queue counts, tenant audit activity viewer, refresh/empty states, and reporting isolation tests.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
 
 - Appointment controller tests pass independently: 2 tests.
-- Full backend suite passes: 37 tests, 0 failures, 0 errors.
+- Full backend suite passes: 39 tests, 0 failures, 0 errors.
 - Frontend build verification pending because `frontend/node_modules` is not installed in the workspace.
