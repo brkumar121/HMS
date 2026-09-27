@@ -1,0 +1,2 @@
+import { Stethoscope } from "lucide-react"; import { WorklistScreen } from "@/components/admin/worklist-screen";
+export default function Doctors(){return <WorklistScreen eyebrow="Clinical directory" title="Doctors" description="Manage doctor profiles, public visibility, services, and departments." icon={Stethoscope} action="Add doctor" rows={[{title:"Dr. Mehta",detail:"Cardiology · 12 years · Public profile",status:"Active"},{title:"Dr. Iyer",detail:"General medicine · 8 years · Public profile",status:"Active"}]}/>}

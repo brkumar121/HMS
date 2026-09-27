@@ -1,0 +1,2 @@
+import { BellRing } from "lucide-react"; import { WorklistScreen } from "@/components/admin/worklist-screen";
+export default function Reminders(){return <WorklistScreen eyebrow="Patient communications" title="Appointment reminders" description="Schedule and monitor SMS, email, and WhatsApp reminders." icon={BellRing} action="Schedule reminder" rows={[{title:"Anita Sharma · SMS",detail:"24 Oct 2026 · 08:30 AM · Appointment reminder",status:"Scheduled"},{title:"Ravi Kumar · WhatsApp",detail:"24 Oct 2026 · 09:00 AM · Appointment reminder",status:"Sent"}]}/>}

@@ -1,0 +1,2 @@
+import { Stethoscope } from "lucide-react"; import { WorklistScreen } from "@/components/admin/worklist-screen";
+export default function Services(){return <WorklistScreen eyebrow="Hospital catalog" title="Services" description="Manage consultation fees, departments, doctors, and public visibility." icon={Stethoscope} action="Add service" rows={[{title:"Cardiology consultation",detail:"Cardiology · ₹800 · 4 doctors",status:"Public"},{title:"General consultation",detail:"General medicine · ₹500 · 8 doctors",status:"Public"}]}/>}

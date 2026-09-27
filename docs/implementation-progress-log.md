@@ -69,6 +69,16 @@ This log records completed implementation slices and verification status.
 - Website settings frontend: hospital logo, colors, typography, preview, and publish controls.
 - Social frontend: connected channel status, configuration, and synchronization controls.
 - Branch frontend: hospital location cards with contact details and management actions.
+- Appointments frontend: appointment operations worklist with lifecycle-oriented records.
+- Patients frontend: patient search and identifier-aware patient worklist.
+- Doctors frontend: doctor directory management workspace.
+- Departments frontend: department organization workspace.
+- Services frontend: hospital service catalog workspace.
+- Availability frontend: recurring schedule and leave management workspace.
+- Staff frontend: invitation, role, and status management workspace.
+- Subscription frontend: plan, usage, billing-period, and account-state workspace.
+- Reminders frontend: appointment reminder scheduling and delivery workspace.
+- Audit frontend: tenant governance and change-history workspace.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification

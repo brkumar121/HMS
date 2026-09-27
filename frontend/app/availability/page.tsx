@@ -1,0 +1,2 @@
+import { Clock3 } from "lucide-react"; import { WorklistScreen } from "@/components/admin/worklist-screen";
+export default function Availability(){return <WorklistScreen eyebrow="Scheduling" title="Doctor availability" description="Manage recurring hours, leave periods, and bookable appointment slots." icon={Clock3} action="Add schedule" rows={[{title:"Dr. Mehta · Monday",detail:"09:00–13:00 · 30 minute slots · Main branch",status:"Active"},{title:"Dr. Iyer · Tuesday",detail:"10:00–17:00 · 20 minute slots · North clinic",status:"Active"}]}/>}

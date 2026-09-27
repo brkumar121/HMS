@@ -1,0 +1,2 @@
+import { CreditCard } from "lucide-react"; import { WorklistScreen } from "@/components/admin/worklist-screen";
+export default function Subscription(){return <WorklistScreen eyebrow="SaaS account" title="Subscription" description="Review plan status, usage limits, billing period, and account state." icon={CreditCard} action="Change plan" rows={[{title:"Professional plan",detail:"₹24,999/month · 1,284 of 2,000 appointments",status:"Active"},{title:"Next billing date",detail:"01 November 2026 · Hospital account payment method",status:"Scheduled"}]}/>}

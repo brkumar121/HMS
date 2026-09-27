@@ -1,0 +1,2 @@
+import { Layers3 } from "lucide-react"; import { WorklistScreen } from "@/components/admin/worklist-screen";
+export default function Departments(){return <WorklistScreen eyebrow="Hospital configuration" title="Departments" description="Organize doctors and services into patient-facing hospital departments." icon={Layers3} action="Add department" rows={[{title:"Cardiology",detail:"8 doctors · 4 public services",status:"Active"},{title:"General medicine",detail:"12 doctors · 7 public services",status:"Active"}]}/>}

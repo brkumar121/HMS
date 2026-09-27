@@ -1,0 +1,2 @@
+import { UserRound } from "lucide-react"; import { WorklistScreen } from "@/components/admin/worklist-screen";
+export default function Patients(){return <WorklistScreen eyebrow="Patient records" title="Patients" description="Find patients by name, phone, hospital ID, or ABHA ID." icon={UserRound} action="Register patient" rows={[{title:"Anita Sharma",detail:"CCH-004821 · +91 98XXXX1200 · ABHA linked",status:"Active"},{title:"Ravi Kumar",detail:"CCH-004822 · +91 97XXXX4400",status:"Active"}]}/>}
