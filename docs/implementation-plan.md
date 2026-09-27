@@ -582,6 +582,8 @@ Done when:
 
 Goal: give each hospital a configurable public website.
 
+Progress: Tenant-owned website branding, theme settings, social handles, contact details, and publish state are implemented.
+
 Build:
 
 - Website theme model.

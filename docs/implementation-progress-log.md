@@ -19,6 +19,7 @@ This log records completed implementation slices and verification status.
 - Appointment auditability: lifecycle timestamps are persisted for request, confirmation, check-in, completion, and cancellation.
 - Follow-ups: tenant-scoped follow-up creation, worklist listing, validation, priority, date range, responsible team, and status updates.
 - Notifications: tenant-scoped queued notification records, channel abstraction for SMS/email/WhatsApp, consent flag, and delivery status model.
+- Website foundation: tenant-owned branding, theme colors, typography, contact details, social handles, and publish state settings.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
