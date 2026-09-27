@@ -18,10 +18,16 @@ export async function getApiHealth(): Promise<ApiHealth> {
 }
 
 async function apiRequest<T>(path: string, options?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE_URL}${path}`, { ...options, headers: { "Content-Type": "application/json", ...(options?.headers ?? {}) } });
+  const token = typeof window !== "undefined" ? window.localStorage.getItem("hms_access_token") : null;
+  const response = await fetch(`${API_BASE_URL}${path}`, { ...options, headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}), ...(options?.headers ?? {}) } });
   if (!response.ok) throw new Error(`API request failed: ${response.status}`);
   return response.json() as Promise<T>;
 }
+export type LoginPayload = { email: string; password: string };
+export type AuthSession = { accessToken: string; tokenType: string; expiresIn: number; displayName: string; role: string };
+export async function login(payload: LoginPayload): Promise<AuthSession> { const session = await apiRequest<AuthSession>("/api/auth/login", { method: "POST", body: JSON.stringify(payload) }); if (typeof window !== "undefined") window.localStorage.setItem("hms_access_token", session.accessToken); return session; }
+export function logout(): void { if (typeof window !== "undefined") window.localStorage.removeItem("hms_access_token"); }
+export function hasSession(): boolean { return typeof window !== "undefined" && Boolean(window.localStorage.getItem("hms_access_token")); }
 export const getHospitalProfile = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/profile`);
 export const getPublicDoctors = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/doctors`);
 export const getPublicServices = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/services`);

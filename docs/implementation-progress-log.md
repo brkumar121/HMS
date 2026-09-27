@@ -108,6 +108,7 @@ This log records completed implementation slices and verification status.
 - Frontend data hooks: React Query cache and mutation hooks for public discovery, availability, appointments, patients, queue boards, reports, booking, appointment actions, queue actions, staff, subscriptions, reminders, notifications, and social synchronization.
 - Authentication foundation: bcrypt-backed staff credentials, staff activation, login endpoint, signed bearer tokens, bearer parsing, and configurable protection for non-public APIs.
 - Security enforcement default: production configuration now enables bearer authentication for non-public APIs; test profile explicitly disables enforcement for controller tests.
+- Frontend authentication integration: login calls backend auth, stores the bearer session, attaches authorization to API requests, detects missing sessions, and provides sign-out behavior.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
