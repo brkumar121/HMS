@@ -13,6 +13,8 @@ This log records completed implementation slices and verification status.
 - Appointment lifecycle: controlled status transitions for confirmation, check-in, completion, cancellation, no-show, and reschedule. Full suite stabilized at 17 passing tests.
 - Queue foundation: token generation for checked-in appointments, doctor/date queue listing, and priority marking with required configurable reason enum and note.
 - Queue operations: patient-safe queue DTOs and token state actions for held, called, skipped, completed, cancelled, and no-show workflows.
+- Queue audit: priority changes now create an audit record containing previous state, reason, note, and appointment reference.
+- Verification: full clean backend suite passes with 18 tests after tenant-owned audit cleanup was aligned with cascade rules.
 
 ## Verification
 

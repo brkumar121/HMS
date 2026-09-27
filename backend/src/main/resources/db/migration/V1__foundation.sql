@@ -32,7 +32,7 @@ create table tenant_users (
 
 create table audit_logs (
     id uuid primary key,
-    tenant_id uuid references tenants(id),
+    tenant_id uuid references tenants(id) on delete cascade,
     actor_user_id uuid references users(id),
     action varchar(120) not null,
     entity_type varchar(120) not null,
