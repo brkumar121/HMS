@@ -11,6 +11,12 @@ public class AppointmentController {
  private final TenantRepository tenants; private final DoctorRepository doctors; private final PatientRepository patients; private final AppointmentRepository appointments;
  public AppointmentController(TenantRepository tenants, DoctorRepository doctors, PatientRepository patients, AppointmentRepository appointments){this.tenants=tenants;this.doctors=doctors;this.patients=patients;this.appointments=appointments;}
  @GetMapping public List<Appointment> list(@PathVariable String tenantSlug){return appointments.findAllByTenantIdOrderByStartsAtAsc(tenantId(tenantSlug));}
+ @PatchMapping("/{appointmentId}/status")
+ public Appointment updateStatus(@PathVariable String tenantSlug,@PathVariable UUID appointmentId,@Valid @RequestBody UpdateAppointmentStatusRequest request){
+  Appointment appointment=appointments.findById(appointmentId).orElseThrow(()->new IllegalArgumentException("Appointment not found"));
+  if(!appointment.getTenantId().equals(tenantId(tenantSlug))) throw new IllegalArgumentException("Appointment does not belong to hospital");
+  appointment.updateStatus(request.status()); return appointments.save(appointment);
+ }
  @PostMapping @ResponseStatus(HttpStatus.CREATED)
  public Appointment create(@PathVariable String tenantSlug,@Valid @RequestBody CreateAppointmentRequest request){
   UUID tenantId=tenantId(tenantSlug);

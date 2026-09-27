@@ -10,8 +10,9 @@ This log records completed implementation slices and verification status.
 - Scheduling rules: recurring doctor availability and leave periods. Commit `ca7aac9`.
 - Slot calculation: available-slot query with leave exclusion. Commit `438b545`.
 - Patient and appointments: patient capture with hospital patient ID and optional ABHA ID, appointment creation, requested status, patient reuse by tenant phone, and duplicate doctor-slot protection. Pending commit.
+- Appointment lifecycle: controlled status transitions for confirmation, check-in, completion, cancellation, no-show, and reschedule. Full suite stabilized at 17 passing tests.
 
 ## Verification
 
 - Appointment controller tests pass independently: 2 tests.
-- Full suite currently has test-context isolation failures in older controller test classes after adding the appointment migration; the appointment slice itself passes. This remains a verification follow-up before the next commit is treated as fully green.
+- Full backend suite passes: 17 tests, 0 failures, 0 errors.
