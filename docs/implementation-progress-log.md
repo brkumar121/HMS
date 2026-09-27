@@ -37,6 +37,7 @@ This log records completed implementation slices and verification status.
 - Notification operations: tenant-safe status updates for queued, sent, failed, and cancelled messages.
 - Social connection lifecycle: tenant-safe enable/disable controls for hospital social handles.
 - Branch operations: tenant-safe branch activation and deactivation controls.
+- Reporting foundation: tenant-scoped appointment status summaries, queue status counts, and audit-log browsing endpoints.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
