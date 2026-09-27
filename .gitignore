@@ -1,0 +1,8 @@
+# Private local product notes and requirements.
+/.private/
+
+# Generated build and local dependency output
+backend/target/
+frontend/node_modules/
+frontend/.next/
+*.log

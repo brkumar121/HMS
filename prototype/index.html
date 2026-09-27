@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HMS SaaS Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Role and screen navigation">
+        <div class="brand">
+          <div class="brand-mark">H</div>
+          <div>
+            <strong>HMS SaaS</strong>
+            <span>Prototype</span>
+          </div>
+        </div>
+
+        <label class="field-label" for="roleSelect">Role</label>
+        <select id="roleSelect" class="select"></select>
+
+        <div class="nav-title">Screens</div>
+        <nav id="screenNav" class="screen-nav"></nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <div id="eyebrow" class="eyebrow">Role workspace</div>
+            <h1 id="screenTitle">Loading</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" title="Search" aria-label="Search">⌕</button>
+            <button class="icon-button" title="Notifications" aria-label="Notifications">!</button>
+            <button class="primary-button" id="primaryAction">New</button>
+          </div>
+        </header>
+
+        <section id="screenContent" class="screen-content"></section>
+      </main>
+
+      <aside class="mobile-preview" aria-label="Mobile preview">
+        <div class="phone">
+          <div class="phone-top">
+            <span></span>
+            <strong id="mobileTitle">Mobile</strong>
+            <span></span>
+          </div>
+          <div id="mobileContent" class="phone-content"></div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
