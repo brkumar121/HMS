@@ -449,7 +449,7 @@ Done when:
 
 Goal: create the operational directory needed for appointments.
 
-Progress: Department foundation completed as the first sub-chunk. The tenant-scoped department schema and API are available at `/api/hospitals/{tenantSlug}/departments`.
+Progress: Department foundation and doctor profile sub-chunks are completed. Tenant-scoped department and doctor APIs are available at `/api/hospitals/{tenantSlug}/departments` and `/api/hospitals/{tenantSlug}/doctors`.
 
 Build:
 
@@ -835,7 +835,7 @@ Maintain a short progress checklist as chunks are completed:
 [ ] Chunk 1 - Authentication, Tenancy, And RBAC
 [ ] Chunk 2 - SaaS Platform Management
 [ ] Chunk 3 - Hospital Onboarding And Profile
-[~] Chunk 4 - Users, Departments, Doctors, Services (departments foundation complete)
+[~] Chunk 4 - Users, Departments, Doctors, Services (departments and doctor profiles complete)
 [ ] Chunk 5 - Doctor Availability And Scheduling Rules
 [ ] Chunk 6 - Appointment Core Workflow
 [ ] Chunk 7 - Queue Tokens And Prioritization
