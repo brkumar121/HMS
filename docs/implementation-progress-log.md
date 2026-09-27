@@ -107,6 +107,7 @@ This log records completed implementation slices and verification status.
 - Frontend mutation contracts: typed client operations for tenant onboarding, staff lifecycle, branches, departments, doctors, availability, appointment lifecycle/payment, queue tokens, notifications, reminders, social sync, subscriptions, patient identifiers, and website publishing.
 - Frontend data hooks: React Query cache and mutation hooks for public discovery, availability, appointments, patients, queue boards, reports, booking, appointment actions, queue actions, staff, subscriptions, reminders, notifications, and social synchronization.
 - Authentication foundation: bcrypt-backed staff credentials, staff activation, login endpoint, signed bearer tokens, bearer parsing, and configurable protection for non-public APIs.
+- Security enforcement default: production configuration now enables bearer authentication for non-public APIs; test profile explicitly disables enforcement for controller tests.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification

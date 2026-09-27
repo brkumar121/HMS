@@ -25,5 +25,7 @@ management:
         include: health,info
 
 hms:
+  security:
+    enforce: ${HMS_SECURITY_ENFORCE:true}
   cors:
     allowed-origins: ${HMS_CORS_ALLOWED_ORIGINS:http://localhost:3000}
