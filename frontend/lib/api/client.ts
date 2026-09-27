@@ -19,8 +19,10 @@ export async function getApiHealth(): Promise<ApiHealth> {
 
 async function apiRequest<T>(path: string, options?: RequestInit): Promise<T> {
   const token = typeof window !== "undefined" ? window.localStorage.getItem("hms_access_token") : null;
-  const response = await fetch(`${API_BASE_URL}${path}`, { ...options, headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}), ...(options?.headers ?? {}) } });
+  const isForm = typeof FormData !== "undefined" && options?.body instanceof FormData;
+  const response = await fetch(`${API_BASE_URL}${path}`, { ...options, headers: { ...(isForm ? {} : { "Content-Type": "application/json" }), ...(token ? { Authorization: `Bearer ${token}` } : {}), ...(options?.headers ?? {}) } });
   if (!response.ok) throw new Error(`API request failed: ${response.status}`);
+  if (response.status === 204) return undefined as T;
   return response.json() as Promise<T>;
 }
 export type LoginPayload = { email: string; password: string };
