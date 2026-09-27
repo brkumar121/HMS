@@ -38,6 +38,9 @@ This log records completed implementation slices and verification status.
 - Social connection lifecycle: tenant-safe enable/disable controls for hospital social handles.
 - Branch operations: tenant-safe branch activation and deactivation controls.
 - Reporting foundation: tenant-scoped appointment status summaries, queue status counts, and audit-log browsing endpoints.
+- Public availability: patient-facing slot lookup for accepting hospitals and active, public doctors.
+- Appointment search: staff search by patient name, appointment date, and status.
+- Patient search: tenant-scoped lookup by name, phone, hospital patient ID, or ABHA ID.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
