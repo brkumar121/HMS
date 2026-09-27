@@ -45,4 +45,18 @@ class AvailabilityControllerTests {
                 .contentType(MediaType.APPLICATION_JSON).content("{\"dayOfWeek\":1,\"startTime\":\"09:00\",\"endTime\":\"10:00\",\"slotDurationMinutes\":20}"))
                 .andExpect(status().isNotFound());
     }
+
+    @Test void calculatesSlotsAndSkipsLeavePeriods() throws Exception {
+        mockMvc.perform(post("/api/hospitals/city-care/doctors/" + doctor.getId() + "/availability")
+                .contentType(MediaType.APPLICATION_JSON).content("{\"dayOfWeek\":1,\"startTime\":\"09:00\",\"endTime\":\"10:00\",\"slotDurationMinutes\":20}"))
+                .andExpect(status().isCreated());
+        mockMvc.perform(post("/api/hospitals/city-care/doctors/" + doctor.getId() + "/leave-periods")
+                .contentType(MediaType.APPLICATION_JSON).content("{\"startsAt\":\"2026-09-28T09:20:00Z\",\"endsAt\":\"2026-09-28T09:40:00Z\",\"reason\":\"Meeting\"}"))
+                .andExpect(status().isCreated());
+        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get(
+                "/api/hospitals/city-care/doctors/" + doctor.getId() + "/available-slots?date=2026-09-28"))
+                .andExpect(status().isOk()).andExpect(jsonPath("$", org.hamcrest.Matchers.hasSize(2)))
+                .andExpect(jsonPath("$[0].startsAt").value("2026-09-28T09:00:00Z"))
+                .andExpect(jsonPath("$[1].startsAt").value("2026-09-28T09:40:00Z"));
+    }
 }

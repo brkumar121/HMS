@@ -8,6 +8,10 @@ import com.hms.tenancy.TenantRepository;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+import java.util.ArrayList;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,6 +42,28 @@ public class AvailabilityController {
         UUID tenantId = doctorTenant(tenantSlug, doctorId);
         if (!request.endsAt().isAfter(request.startsAt())) throw new IllegalArgumentException("endsAt must be after startsAt");
         return leaves.save(new DoctorLeavePeriod(tenantId, doctorId, request));
+    }
+
+    @GetMapping("/available-slots")
+    public List<AvailableSlotDto> availableSlots(@PathVariable String tenantSlug, @PathVariable UUID doctorId,
+                                                  @RequestParam LocalDate date) {
+        UUID tenantId = doctorTenant(tenantSlug, doctorId);
+        List<DoctorLeavePeriod> leavePeriods = leaves.findAllByTenantIdAndDoctorIdOrderByStartsAt(tenantId, doctorId);
+        List<AvailableSlotDto> result = new ArrayList<>();
+        availability.findAllByTenantIdAndDoctorIdOrderByDayOfWeekAscStartTimeAsc(tenantId, doctorId).stream()
+                .filter(rule -> rule.isActive() && rule.getDayOfWeek() == date.getDayOfWeek().getValue())
+                .forEach(rule -> {
+                    OffsetDateTime cursor = date.atTime(rule.getStartTime()).atOffset(ZoneOffset.UTC);
+                    OffsetDateTime end = date.atTime(rule.getEndTime()).atOffset(ZoneOffset.UTC);
+                    while (!cursor.plusMinutes(rule.getSlotDurationMinutes()).isAfter(end)) {
+                        OffsetDateTime slotStart = cursor;
+                        OffsetDateTime slotEnd = slotStart.plusMinutes(rule.getSlotDurationMinutes());
+                        boolean blocked = leavePeriods.stream().anyMatch(leave -> slotStart.isBefore(leave.getEndsAt()) && slotEnd.isAfter(leave.getStartsAt()));
+                        if (!blocked) result.add(new AvailableSlotDto(slotStart, slotEnd, rule.getSessionName(), rule.getLocation()));
+                        cursor = slotEnd;
+                    }
+                });
+        return result;
     }
     private UUID doctorTenant(String slug, UUID doctorId) {
         UUID tenantId = tenants.findBySlug(slug).map(Tenant::getId).orElseThrow(() -> new TenantNotFoundException(slug));
