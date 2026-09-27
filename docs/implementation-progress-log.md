@@ -21,6 +21,7 @@ This log records completed implementation slices and verification status.
 - Notifications: tenant-scoped queued notification records, channel abstraction for SMS/email/WhatsApp, consent flag, and delivery status model.
 - Website foundation: tenant-owned branding, theme colors, typography, contact details, social handles, and publish state settings.
 - Website content: categorized tenant content items with draft, published, archived states and patient-safe public filtering.
+- Social integration foundation: tenant-scoped platform connections, handles, profile links, enabled state, and provider abstraction for future feed synchronization.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification

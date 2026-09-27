@@ -626,6 +626,8 @@ Done when:
 
 Goal: provide social presence without making the website fragile.
 
+Progress: Tenant-scoped social platform connections, handles, profile links, enabled state, and provider abstraction are implemented.
+
 Build:
 
 - Social handles and links.
