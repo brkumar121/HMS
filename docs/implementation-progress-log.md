@@ -105,6 +105,7 @@ This log records completed implementation slices and verification status.
 - Detailed reporting slices: appointment and queue reports.
 - Frontend API integration contracts: typed client calls for public profile, doctors, services, content, pages, availability, booking, appointments, patients, queue, staff, branches, subscriptions, payments, reminders, notifications, social connections, reports, and audit logs.
 - Frontend mutation contracts: typed client operations for tenant onboarding, staff lifecycle, branches, departments, doctors, availability, appointment lifecycle/payment, queue tokens, notifications, reminders, social sync, subscriptions, patient identifiers, and website publishing.
+- Frontend data hooks: React Query cache and mutation hooks for public discovery, availability, appointments, patients, queue boards, reports, booking, appointment actions, queue actions, staff, subscriptions, reminders, notifications, and social synchronization.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
