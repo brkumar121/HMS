@@ -2,6 +2,8 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import * as api from "./client";
 export const useHospitalProfile=(slug:string)=>useQuery({queryKey:["hospital-profile",slug],queryFn:()=>api.getHospitalProfile(slug),enabled:Boolean(slug)});
+export const useTenants=()=>useQuery({queryKey:["tenants"],queryFn:()=>api.listTenants()});
+export const useCreateTenant=()=>useMutation({mutationFn:(payload:unknown)=>api.createTenant(payload)});
 export const usePublicDoctors=(slug:string)=>useQuery({queryKey:["public-doctors",slug],queryFn:()=>api.getPublicDoctors(slug),enabled:Boolean(slug)});
 export const usePublicServices=(slug:string)=>useQuery({queryKey:["public-services",slug],queryFn:()=>api.getPublicServices(slug),enabled:Boolean(slug)});
 export const usePublicContent=(slug:string)=>useQuery({queryKey:["public-content",slug],queryFn:()=>api.getPublicContent(slug),enabled:Boolean(slug)});
@@ -17,7 +19,9 @@ export const useReminders=(slug:string)=>useQuery({queryKey:["reminders",slug],q
 export const useDoctorAvailability=(slug:string,doctorId:string)=>useQuery({queryKey:["doctor-availability",slug,doctorId],queryFn:()=>api.listDoctorAvailability(slug,doctorId),enabled:Boolean(slug&&doctorId)});
 export const useDoctorSlots=(slug:string,doctorId:string,date:string)=>useQuery({queryKey:["doctor-slots",slug,doctorId,date],queryFn:()=>api.getDoctorSlots(slug,doctorId,date),enabled:Boolean(slug&&doctorId&&date)});
 export const useAppointments=(slug:string)=>useQuery({queryKey:["appointments",slug],queryFn:()=>api.listAppointments(slug),enabled:Boolean(slug)});
+export const useAppointmentSearch=(slug:string,query:string)=>useQuery({queryKey:["appointment-search",slug,query],queryFn:()=>api.searchAppointments(slug,query),enabled:Boolean(slug)});
 export const usePatients=(slug:string,query:string)=>useQuery({queryKey:["patients",slug,query],queryFn:()=>api.searchPatients(slug,query),enabled:Boolean(slug)});
+export const usePatientIdentifiers=(slug:string)=>useQuery({queryKey:["patient-identifiers",slug],queryFn:()=>api.getPatientIdentifiers(slug),enabled:Boolean(slug)});
 export const useFollowUps=(slug:string)=>useQuery({queryKey:["follow-ups",slug],queryFn:()=>api.listFollowUps(slug),enabled:Boolean(slug)});
 export const useQueueBoard=(slug:string,date:string)=>useQuery({queryKey:["queue-board",slug,date],queryFn:()=>api.listQueue(slug,date),enabled:Boolean(slug&&date),refetchInterval:15000});
 export const useAppointmentReport=(slug:string)=>useQuery({queryKey:["appointment-report",slug],queryFn:()=>api.getAppointmentReport(slug),enabled:Boolean(slug)});

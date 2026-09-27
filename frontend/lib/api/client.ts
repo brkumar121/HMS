@@ -59,6 +59,7 @@ export const getAppointmentReport = (slug: string) => apiRequest(`/api/hospitals
 export const getQueueReport = (slug: string) => apiRequest(`/api/hospitals/${slug}/reports/queue`);
 export const getAuditLog = (slug: string) => apiRequest(`/api/hospitals/${slug}/reports/audit`);
 export const createTenant = (payload: unknown) => apiRequest(`/api/platform/tenants`, { method: "POST", body: JSON.stringify(payload) });
+export const listTenants = () => apiRequest(`/api/platform/tenants`);
 export const inviteStaff = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/staff`, { method: "POST", body: JSON.stringify(payload) });
 export const updateStaffStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/staff/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });
 export const createBranch = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/branches`, { method: "POST", body: JSON.stringify(payload) });
@@ -84,6 +85,7 @@ export const syncSocialConnection = (slug: string, id: string) => apiRequest(`/a
 export const updatePaymentSettings = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/appointment-payments`, { method: "PUT", body: JSON.stringify(payload) });
 export const updateSubscription = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/subscription`, { method: "PUT", body: JSON.stringify(payload) });
 export const updatePatientIdentifiers = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`, { method: "PUT", body: JSON.stringify(payload) });
+export const getPatientIdentifiers = (slug: string) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`);
 export const getWebsiteSettings = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/settings`);
 export const updateWebsiteSettings = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/settings`, { method: "PUT", body: JSON.stringify(payload) });
 export const createWebsitePage = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/pages`, { method: "POST", body: JSON.stringify(payload) });
