@@ -5,6 +5,7 @@ export const useHospitalProfile=(slug:string)=>useQuery({queryKey:["hospital-pro
 export const usePublicDoctors=(slug:string)=>useQuery({queryKey:["public-doctors",slug],queryFn:()=>api.getPublicDoctors(slug),enabled:Boolean(slug)});
 export const usePublicServices=(slug:string)=>useQuery({queryKey:["public-services",slug],queryFn:()=>api.getPublicServices(slug),enabled:Boolean(slug)});
 export const usePublicContent=(slug:string)=>useQuery({queryKey:["public-content",slug],queryFn:()=>api.getPublicContent(slug),enabled:Boolean(slug)});
+export const useWebsiteContent=(slug:string)=>useQuery({queryKey:["website-content",slug],queryFn:()=>api.listWebsiteContent(slug),enabled:Boolean(slug)});
 export const usePublicPages=(slug:string)=>useQuery({queryKey:["public-pages",slug],queryFn:()=>api.getPublicPages(slug),enabled:Boolean(slug)});
 export const usePublicWebsiteSettings=(slug:string)=>useQuery({queryKey:["public-website-settings",slug],queryFn:()=>api.getPublicWebsiteSettings(slug),enabled:Boolean(slug)});
 export const useDoctorSlots=(slug:string,doctorId:string,date:string)=>useQuery({queryKey:["doctor-slots",slug,doctorId,date],queryFn:()=>api.getDoctorSlots(slug,doctorId,date),enabled:Boolean(slug&&doctorId&&date)});
@@ -34,3 +35,4 @@ export const useUpdateNotificationStatus=(slug:string)=>useMutation({mutationFn:
 export const useSyncSocialConnection=(slug:string,id:string)=>useMutation({mutationFn:()=>api.syncSocialConnection(slug,id)});
 export const useWebsiteSettings=(slug:string)=>useQuery({queryKey:["website-settings",slug],queryFn:()=>api.getWebsiteSettings(slug),enabled:Boolean(slug)});
 export const useUpdateWebsiteSettings=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateWebsiteSettings(slug,payload)});
+export const useCreateWebsiteContent=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createWebsiteContent(slug,payload)});

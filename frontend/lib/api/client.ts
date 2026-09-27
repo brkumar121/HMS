@@ -31,7 +31,7 @@ export function hasSession(): boolean { return typeof window !== "undefined" && 
 export const getHospitalProfile = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/profile`);
 export const getPublicDoctors = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/doctors`);
 export const getPublicServices = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/services`);
-export const getPublicContent = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/content`);
+export const getPublicContent = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/content/public`);
 export const getPublicPages = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/pages`);
 export const getPublicWebsiteSettings = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/website/settings`);
 export const getDoctorSlots = (slug: string, doctorId: string, date: string) => apiRequest(`/api/public/hospitals/${slug}/doctors/${doctorId}/availability?date=${encodeURIComponent(date)}`);
@@ -81,3 +81,4 @@ export const getWebsiteSettings = (slug: string) => apiRequest(`/api/hospitals/$
 export const updateWebsiteSettings = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/settings`, { method: "PUT", body: JSON.stringify(payload) });
 export const createWebsitePage = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/pages`, { method: "POST", body: JSON.stringify(payload) });
 export const createWebsiteContent = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/content`, { method: "POST", body: JSON.stringify(payload) });
+export const listWebsiteContent = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/content`);
