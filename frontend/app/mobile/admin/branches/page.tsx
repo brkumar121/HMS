@@ -1,0 +1,1 @@
+import { Building2 } from "lucide-react"; import { MobileScreen } from "@/components/admin/mobile-screen"; export default function MobileAdminBranches(){return <MobileScreen role="Admin mobile" title="Branches" description="Manage hospital locations and branch availability." icon={Building2} items={["Main hospital","North clinic","Add branch","Branch service catalog"]}/>}

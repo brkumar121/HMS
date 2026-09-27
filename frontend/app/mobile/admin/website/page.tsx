@@ -1,0 +1,1 @@
+import { Palette } from "lucide-react"; import { MobileScreen } from "@/components/admin/mobile-screen"; export default function MobileAdminWebsite(){return <MobileScreen role="Admin mobile" title="Website controls" description="Manage hospital branding, pages, and publishing state." icon={Palette} items={["Brand theme","Website pages","Published content","Preview website"]}/>}

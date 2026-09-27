@@ -90,6 +90,11 @@ This log records completed implementation slices and verification status.
 - Public pages frontend: hospital information page.
 - Content preview frontend: publish-ready content review and sharing workflow.
 - Supporting workflow screens: password recovery, invitation acceptance, branch/service detail, doctor availability/profile, queue display, payment verification, follow-up detail, notification detail, social detail, identifier/theme/access/notification settings, custom domains, media library, imports, exports, support, invoices, plans, system health, and privacy controls.
+- Mobile patient slices: booking, appointments, profile, and reminders.
+- Mobile reception slices: check-in, queue, payment verification, and appointment search.
+- Mobile doctor slices: rounds, patient context, follow-ups, and availability.
+- Mobile hospital admin slices: approvals, staff, website, and branches.
+- Mobile platform owner slices: hospital accounts, billing alerts, support cases, and system health.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
