@@ -6,6 +6,7 @@ export const usePublicDoctors=(slug:string)=>useQuery({queryKey:["public-doctors
 export const usePublicServices=(slug:string)=>useQuery({queryKey:["public-services",slug],queryFn:()=>api.getPublicServices(slug),enabled:Boolean(slug)});
 export const usePublicContent=(slug:string)=>useQuery({queryKey:["public-content",slug],queryFn:()=>api.getPublicContent(slug),enabled:Boolean(slug)});
 export const usePublicPages=(slug:string)=>useQuery({queryKey:["public-pages",slug],queryFn:()=>api.getPublicPages(slug),enabled:Boolean(slug)});
+export const usePublicWebsiteSettings=(slug:string)=>useQuery({queryKey:["public-website-settings",slug],queryFn:()=>api.getPublicWebsiteSettings(slug),enabled:Boolean(slug)});
 export const useDoctorSlots=(slug:string,doctorId:string,date:string)=>useQuery({queryKey:["doctor-slots",slug,doctorId,date],queryFn:()=>api.getDoctorSlots(slug,doctorId,date),enabled:Boolean(slug&&doctorId&&date)});
 export const useAppointments=(slug:string)=>useQuery({queryKey:["appointments",slug],queryFn:()=>api.listAppointments(slug),enabled:Boolean(slug)});
 export const usePatients=(slug:string,query:string)=>useQuery({queryKey:["patients",slug,query],queryFn:()=>api.searchPatients(slug,query),enabled:Boolean(slug)});
@@ -31,3 +32,5 @@ export const useNotifications=(slug:string)=>useQuery({queryKey:["notifications"
 export const useRetryNotification=(slug:string)=>useMutation({mutationFn:(id:string)=>api.retryNotification(slug,id)});
 export const useUpdateNotificationStatus=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.updateNotificationStatus(slug,id,payload)});
 export const useSyncSocialConnection=(slug:string,id:string)=>useMutation({mutationFn:()=>api.syncSocialConnection(slug,id)});
+export const useWebsiteSettings=(slug:string)=>useQuery({queryKey:["website-settings",slug],queryFn:()=>api.getWebsiteSettings(slug),enabled:Boolean(slug)});
+export const useUpdateWebsiteSettings=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateWebsiteSettings(slug,payload)});
