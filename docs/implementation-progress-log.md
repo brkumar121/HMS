@@ -24,6 +24,7 @@ This log records completed implementation slices and verification status.
 - Social integration foundation: tenant-scoped platform connections, handles, profile links, enabled state, and provider abstraction for future feed synchronization.
 - Hospital services: tenant-scoped service catalog with department mapping, fees, active state, and public visibility.
 - Hospital branches: tenant-scoped branch/location records with code, address, phone, and active state.
+- Doctor services: validated tenant-scoped doctor-to-service assignment endpoint.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
