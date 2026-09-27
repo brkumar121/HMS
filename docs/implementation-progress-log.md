@@ -128,10 +128,12 @@ This log records completed implementation slices and verification status.
 - Five-module patient experience batch: public booking submission, patient mobile appointments, patient mobile profile context, doctor mobile rounds, and authenticated staff session entry workflows connected to live APIs.
 - Five-module workflow batch: branch activation, mobile website/page status, patient reminder viewing, appointment detail actions, and website page administration consumption connected to tenant APIs.
 - Ten-screen mobile role batch: live admin branches/staff/approvals, platform billing/health, doctor follow-ups/availability/patient context, and reception appointment search/check-in screens.
+- Production hardening: enforced security now fails fast without a configured non-development authentication secret, and the API emits content-type, clickjacking, and HSTS security headers.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
 
 - Appointment controller tests pass independently: 2 tests.
 - Full backend suite passes: 39 tests, 0 failures, 0 errors.
+- Production gate remaining: configure real provider credentials, rate limiting/anti-spam, backups/restore, monitoring/error tracking, frontend dependency installation/build, and external security/accessibility review.
 - Frontend build verification pending because `frontend/node_modules` is not installed in the workspace.
