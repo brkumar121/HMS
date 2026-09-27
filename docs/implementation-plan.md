@@ -535,6 +535,8 @@ Done when:
 
 Goal: support hospital queue operations with audit-safe prioritization.
 
+Progress: Initial checked-in appointment token creation, doctor/date queue listing, and required-reason priority marking are implemented.
+
 Build:
 
 - Token generation for checked-in appointments and walk-ins.
