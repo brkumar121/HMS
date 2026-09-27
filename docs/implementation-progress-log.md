@@ -15,6 +15,7 @@ This log records completed implementation slices and verification status.
 - Queue operations: patient-safe queue DTOs and token state actions for held, called, skipped, completed, cancelled, and no-show workflows.
 - Queue audit: priority changes now create an audit record containing previous state, reason, note, and appointment reference.
 - Verification: full clean backend suite passes with 18 tests after tenant-owned audit cleanup was aligned with cascade rules.
+- Appointment operations: staff-facing appointment list now returns patient context and supports doctor, status, and phone filters within the tenant.
 
 ## Verification
 

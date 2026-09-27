@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class AppointmentController {
  private final TenantRepository tenants; private final DoctorRepository doctors; private final PatientRepository patients; private final AppointmentRepository appointments;
  public AppointmentController(TenantRepository tenants, DoctorRepository doctors, PatientRepository patients, AppointmentRepository appointments){this.tenants=tenants;this.doctors=doctors;this.patients=patients;this.appointments=appointments;}
- @GetMapping public List<Appointment> list(@PathVariable String tenantSlug){return appointments.findAllByTenantIdOrderByStartsAtAsc(tenantId(tenantSlug));}
+ @GetMapping public List<AppointmentDto> list(@PathVariable String tenantSlug,@RequestParam(required=false) UUID doctorId,@RequestParam(required=false) AppointmentStatus status,@RequestParam(required=false) String patientPhone){UUID tenant=tenantId(tenantSlug);Map<UUID,Patient> patientsById=patients.findAllByTenantId(tenant).stream().collect(java.util.stream.Collectors.toMap(Patient::getId,p->p));return appointments.findAllByTenantIdOrderByStartsAtAsc(tenant).stream().filter(a->doctorId==null||a.getDoctorId().equals(doctorId)).filter(a->status==null||a.getStatus()==status).filter(a->patientPhone==null||patientsById.get(a.getPatientId()).getPhone().equals(patientPhone)).map(a->AppointmentDto.from(a,patientsById.get(a.getPatientId()))).toList();}
  @PatchMapping("/{appointmentId}/status")
  public Appointment updateStatus(@PathVariable String tenantSlug,@PathVariable UUID appointmentId,@Valid @RequestBody UpdateAppointmentStatusRequest request){
   Appointment appointment=appointments.findById(appointmentId).orElseThrow(()->new IllegalArgumentException("Appointment not found"));
