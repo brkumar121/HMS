@@ -33,6 +33,10 @@ hms:
     provider: ${HMS_NOTIFICATION_PROVIDER:mock}
     dispatch-enabled: ${HMS_NOTIFICATION_DISPATCH_ENABLED:false}
     dispatch-interval-ms: ${HMS_NOTIFICATION_DISPATCH_INTERVAL_MS:30000}
+    webhook:
+      sms: ${HMS_NOTIFICATION_WEBHOOK_SMS:}
+      email: ${HMS_NOTIFICATION_WEBHOOK_EMAIL:}
+      whatsapp: ${HMS_NOTIFICATION_WEBHOOK_WHATSAPP:}
   public-rate-limit:
     max-requests: ${HMS_PUBLIC_RATE_LIMIT_MAX:30}
     window-ms: ${HMS_PUBLIC_RATE_LIMIT_WINDOW_MS:60000}
