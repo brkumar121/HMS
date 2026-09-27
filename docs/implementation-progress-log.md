@@ -125,6 +125,7 @@ This log records completed implementation slices and verification status.
 - Five-module operations batch: live branch directory, staff directory, reminder worklist, doctor availability view, and public patient-facing service directory connected to tenant APIs.
 - Five-module launch batch: tenant onboarding creation, platform hospital account listing, hospital ID and ABHA settings, live public information pages, and dedicated appointment search hook connected to the API.
 - Five-module workflow batch: staff activation/suspension, live queue display with call action, reception payment verification, reminder scheduling for appointments, and public website page consumption workflows.
+- Five-module patient experience batch: public booking submission, patient mobile appointments, patient mobile profile context, doctor mobile rounds, and authenticated staff session entry workflows connected to live APIs.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
