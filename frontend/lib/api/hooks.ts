@@ -63,6 +63,7 @@ export const useAddCustomDomain=(slug:string)=>useMutation({mutationFn:(payload:
 export const useVerifyCustomDomain=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.verifyCustomDomain(slug,id,payload)});
 export const useDisableCustomDomain=(slug:string)=>useMutation({mutationFn:(id:string)=>api.disableCustomDomain(slug,id)});
 export const useImportJobs=(slug:string)=>useQuery({queryKey:["import-jobs",slug],queryFn:()=>api.listImportJobs(slug),enabled:Boolean(slug)});
+export const useSetupHealth=(slug:string)=>useQuery({queryKey:["setup-health",slug],queryFn:()=>api.getSetupHealth(slug),enabled:Boolean(slug)});
 export const useUploadImport=(slug:string)=>useMutation({mutationFn:({type,file}:{type:string;file:File})=>api.uploadImport(slug,type,file)});
 export const useUpdateWebsiteSettings=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateWebsiteSettings(slug,payload)});
 export const useCreateWebsiteContent=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createWebsiteContent(slug,payload)});
