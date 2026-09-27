@@ -1,0 +1,1 @@
+import { Archive } from "lucide-react"; import { QuickScreen } from "@/components/admin/quick-screen"; export default function ArchivedContent(){return <QuickScreen eyebrow="Publishing" title="Archived content" description="Restore or permanently remove old hospital content." icon={Archive} items={["Restore content","Review archive date","Delete permanently","Export archive"]}/>}

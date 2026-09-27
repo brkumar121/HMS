@@ -1,0 +1,1 @@
+import { Fingerprint } from "lucide-react"; import { QuickScreen } from "@/components/admin/quick-screen"; export default function PatientConsent(){return <QuickScreen eyebrow="Patient privacy" title="Consent records" description="Review ABHA, communication, and data-use consent." icon={Fingerprint} items={["ABHA consent","SMS consent","Email consent","Withdraw consent"]}/>}

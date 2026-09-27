@@ -1,0 +1,1 @@
+import { KeyRound } from "lucide-react"; import { QuickScreen } from "@/components/admin/quick-screen"; export default function StaffRoles(){return <QuickScreen eyebrow="Access management" title="Role permissions" description="Review capabilities for each hospital staff role." icon={KeyRound} items={["Hospital administrator","Reception","Doctor","Content marketing"]}/>}

@@ -95,6 +95,14 @@ This log records completed implementation slices and verification status.
 - Mobile doctor slices: rounds, patient context, follow-ups, and availability.
 - Mobile hospital admin slices: approvals, staff, website, and branches.
 - Mobile platform owner slices: hospital accounts, billing alerts, support cases, and system health.
+- Onboarding detail slices: hospital profile, departments, and owner setup.
+- Appointment action slices: confirm, check-in, complete, and cancel workflows.
+- Queue action slices: prioritize, hold, and call-next workflows.
+- Patient consent slice: ABHA and communication consent review.
+- Billing detail slices: payment methods and plan usage.
+- Content lifecycle slices: drafts, published content, archive, and social preview.
+- Staff governance slices: role permissions and staff activity.
+- Detailed reporting slices: appointment and queue reports.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification

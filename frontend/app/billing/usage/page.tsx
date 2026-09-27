@@ -1,0 +1,1 @@
+import { Gauge } from "lucide-react"; import { QuickScreen } from "@/components/admin/quick-screen"; export default function BillingUsage(){return <QuickScreen eyebrow="Billing" title="Plan usage" description="Monitor appointment capacity and product limits." icon={Gauge} items={["Appointments this period","Staff seats","Website pages","Notification volume"]}/>}
