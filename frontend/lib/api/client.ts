@@ -64,6 +64,7 @@ export const inviteStaff = (slug: string, payload: unknown) => apiRequest(`/api/
 export const updateStaffStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/staff/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });
 export const createBranch = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/branches`, { method: "POST", body: JSON.stringify(payload) });
 export const updateBranchStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/branches/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });
+export const listWebsitePages = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/pages`);
 export const createService = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/services`, { method: "POST", body: JSON.stringify(payload) });
 export const createDepartment = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/departments`, { method: "POST", body: JSON.stringify(payload) });
 export const createDoctor = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/doctors`, { method: "POST", body: JSON.stringify(payload) });
