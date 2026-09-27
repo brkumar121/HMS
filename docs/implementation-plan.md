@@ -449,7 +449,7 @@ Done when:
 
 Goal: create the operational directory needed for appointments.
 
-Progress: Department foundation and doctor profile sub-chunks are completed. Tenant-scoped department and doctor APIs are available at `/api/hospitals/{tenantSlug}/departments` and `/api/hospitals/{tenantSlug}/doctors`.
+Progress: Department, doctor profile, and service catalog sub-chunks are completed. Tenant-scoped department, doctor, and service APIs are available.
 
 Build:
 
