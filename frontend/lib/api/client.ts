@@ -96,6 +96,8 @@ export const listCustomDomains = (slug: string) => apiRequest(`/api/hospitals/${
 export const addCustomDomain = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/domains`, { method: "POST", body: JSON.stringify(payload) });
 export const verifyCustomDomain = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/domains/${id}/verify`, { method: "POST", body: JSON.stringify(payload) });
 export const disableCustomDomain = (slug: string, id: string) => apiRequest(`/api/hospitals/${slug}/website/domains/${id}`, { method: "DELETE" });
+export const listImportJobs = (slug: string) => apiRequest(`/api/hospitals/${slug}/imports`);
+export const uploadImport = (slug: string, type: string, file: File) => { const body = new FormData(); body.append("type", type); body.append("file", file); return apiRequest(`/api/hospitals/${slug}/imports`, { method: "POST", body }); };
 export const createWebsitePage = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/pages`, { method: "POST", body: JSON.stringify(payload) });
 export const createWebsiteContent = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/content`, { method: "POST", body: JSON.stringify(payload) });
 export const listWebsiteContent = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/content`);

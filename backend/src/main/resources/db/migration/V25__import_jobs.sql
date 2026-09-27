@@ -1,0 +1,2 @@
+create table import_jobs (id uuid primary key, tenant_id uuid not null references tenants(id) on delete cascade, import_type varchar(30) not null, status varchar(30) not null, total_rows integer not null, imported_rows integer not null, skipped_rows integer not null, error_report varchar(12000), created_at timestamp with time zone not null, completed_at timestamp with time zone);
+create index idx_import_jobs_tenant on import_jobs(tenant_id, created_at desc);
