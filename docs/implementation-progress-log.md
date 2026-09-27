@@ -64,6 +64,11 @@ This log records completed implementation slices and verification status.
 - Public doctor directory frontend: specialist discovery and booking entry point.
 - Billing frontend: subscription overview and hospital appointment payment configuration.
 - Communications frontend: notification and reminder delivery activity with queued, sent, and failed states.
+- Queue frontend: token board with doctor filters, priority ordering, and token actions.
+- Follow-up frontend: care coordination worklist with due dates, priority, ownership, and completion action.
+- Website settings frontend: hospital logo, colors, typography, preview, and publish controls.
+- Social frontend: connected channel status, configuration, and synchronization controls.
+- Branch frontend: hospital location cards with contact details and management actions.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
