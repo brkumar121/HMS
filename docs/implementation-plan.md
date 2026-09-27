@@ -470,6 +470,8 @@ Done when:
 
 Goal: create reliable appointment slots.
 
+Progress: Recurring weekly availability and doctor leave periods are implemented. The APIs are available under `/api/hospitals/{tenantSlug}/doctors/{doctorId}/availability` and `/leave-periods`.
+
 Build:
 
 - Availability by doctor, branch, day/date, session, room.
@@ -836,7 +838,7 @@ Maintain a short progress checklist as chunks are completed:
 [ ] Chunk 2 - SaaS Platform Management
 [ ] Chunk 3 - Hospital Onboarding And Profile
 [~] Chunk 4 - Users, Departments, Doctors, Services (departments and doctor profiles complete)
-[ ] Chunk 5 - Doctor Availability And Scheduling Rules
+[~] Chunk 5 - Doctor Availability And Scheduling Rules (availability and leave periods complete)
 [ ] Chunk 6 - Appointment Core Workflow
 [ ] Chunk 7 - Queue Tokens And Prioritization
 [ ] Chunk 8 - Doctor Workspace

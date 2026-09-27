@@ -3,6 +3,7 @@
 
 # Generated build and local dependency output
 backend/target/
+backend/bin/
 frontend/node_modules/
 frontend/.next/
 *.log
