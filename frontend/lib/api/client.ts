@@ -89,6 +89,10 @@ export const updatePatientIdentifiers = (slug: string, payload: unknown) => apiR
 export const getPatientIdentifiers = (slug: string) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`);
 export const getWebsiteSettings = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/settings`);
 export const updateWebsiteSettings = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/settings`, { method: "PUT", body: JSON.stringify(payload) });
+export const listCustomDomains = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/domains`);
+export const addCustomDomain = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/domains`, { method: "POST", body: JSON.stringify(payload) });
+export const verifyCustomDomain = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/domains/${id}/verify`, { method: "POST", body: JSON.stringify(payload) });
+export const disableCustomDomain = (slug: string, id: string) => apiRequest(`/api/hospitals/${slug}/website/domains/${id}`, { method: "DELETE" });
 export const createWebsitePage = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/pages`, { method: "POST", body: JSON.stringify(payload) });
 export const createWebsiteContent = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/website/content`, { method: "POST", body: JSON.stringify(payload) });
 export const listWebsiteContent = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/content`);
