@@ -44,6 +44,8 @@ export const listQueue = (slug: string, date: string) => apiRequest(`/api/hospit
 export const listStaff = (slug: string) => apiRequest(`/api/hospitals/${slug}/staff`);
 export const listBranches = (slug: string) => apiRequest(`/api/hospitals/${slug}/branches`);
 export const listServices = (slug: string) => apiRequest(`/api/hospitals/${slug}/services`);
+export const listDepartments = (slug: string) => apiRequest(`/api/hospitals/${slug}/departments`);
+export const listDoctors = (slug: string) => apiRequest(`/api/hospitals/${slug}/doctors`);
 export const getSubscription = (slug: string) => apiRequest(`/api/hospitals/${slug}/subscription`);
 export const getPaymentSettings = (slug: string) => apiRequest(`/api/hospitals/${slug}/appointment-payments`);
 export const listReminders = (slug: string) => apiRequest(`/api/hospitals/${slug}/reminders`);

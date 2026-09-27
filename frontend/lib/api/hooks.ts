@@ -8,6 +8,9 @@ export const usePublicContent=(slug:string)=>useQuery({queryKey:["public-content
 export const useWebsiteContent=(slug:string)=>useQuery({queryKey:["website-content",slug],queryFn:()=>api.listWebsiteContent(slug),enabled:Boolean(slug)});
 export const usePublicPages=(slug:string)=>useQuery({queryKey:["public-pages",slug],queryFn:()=>api.getPublicPages(slug),enabled:Boolean(slug)});
 export const usePublicWebsiteSettings=(slug:string)=>useQuery({queryKey:["public-website-settings",slug],queryFn:()=>api.getPublicWebsiteSettings(slug),enabled:Boolean(slug)});
+export const useDepartments=(slug:string)=>useQuery({queryKey:["departments",slug],queryFn:()=>api.listDepartments(slug),enabled:Boolean(slug)});
+export const useDoctors=(slug:string)=>useQuery({queryKey:["doctors",slug],queryFn:()=>api.listDoctors(slug),enabled:Boolean(slug)});
+export const useServices=(slug:string)=>useQuery({queryKey:["services",slug],queryFn:()=>api.listServices(slug),enabled:Boolean(slug)});
 export const useDoctorSlots=(slug:string,doctorId:string,date:string)=>useQuery({queryKey:["doctor-slots",slug,doctorId,date],queryFn:()=>api.getDoctorSlots(slug,doctorId,date),enabled:Boolean(slug&&doctorId&&date)});
 export const useAppointments=(slug:string)=>useQuery({queryKey:["appointments",slug],queryFn:()=>api.listAppointments(slug),enabled:Boolean(slug)});
 export const usePatients=(slug:string,query:string)=>useQuery({queryKey:["patients",slug,query],queryFn:()=>api.searchPatients(slug,query),enabled:Boolean(slug)});
@@ -41,3 +44,6 @@ export const useUpdateSocialConnection=(slug:string)=>useMutation({mutationFn:({
 export const useWebsiteSettings=(slug:string)=>useQuery({queryKey:["website-settings",slug],queryFn:()=>api.getWebsiteSettings(slug),enabled:Boolean(slug)});
 export const useUpdateWebsiteSettings=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateWebsiteSettings(slug,payload)});
 export const useCreateWebsiteContent=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createWebsiteContent(slug,payload)});
+export const useCreateDepartment=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createDepartment(slug,payload)});
+export const useCreateDoctor=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createDoctor(slug,payload)});
+export const useCreateService=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createService(slug,payload)});
