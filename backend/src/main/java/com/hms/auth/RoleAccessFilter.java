@@ -49,6 +49,7 @@ public class RoleAccessFilter extends OncePerRequestFilter {
 
     private Set<String> allowedRoles(String uri, String method) {
         if (uri.startsWith("/api/platform/")) return Set.of("PLATFORM_OWNER");
+        if (uri.contains("/reports/export/")) return Set.of("HOSPITAL_OWNER", "ADMINISTRATOR");
         if ("GET".equals(method)) return Set.of();
         if (uri.contains("/queue/") || uri.contains("/queue-board")) return Set.of("HOSPITAL_OWNER", "ADMINISTRATOR", "RECEPTION", "DOCTOR");
         if (uri.contains("/appointments") || uri.contains("/patients") || uri.contains("/follow-ups") || uri.contains("/reminders")) {
