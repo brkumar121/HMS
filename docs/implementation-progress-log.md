@@ -30,6 +30,8 @@ This log records completed implementation slices and verification status.
 - Staff memberships: tenant-scoped staff invitations with hospital roles and invitation status.
 - Appointment payments: hospital-owned payment mode and bank, UPI, payment-link, or manual instructions for hospitals without a gateway API.
 - Website pages: tenant-managed draft/published/archived pages with public published-page endpoints.
+- Public appointment booking: patient-facing booking endpoint restricted to active, public doctors and accepting hospitals.
+- Appointment payment tracking: appointment-level payment status and reference updates for manual hospital collection workflows.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
