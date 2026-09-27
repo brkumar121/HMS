@@ -33,6 +33,9 @@ export const useNotifications=(slug:string)=>useQuery({queryKey:["notifications"
 export const useRetryNotification=(slug:string)=>useMutation({mutationFn:(id:string)=>api.retryNotification(slug,id)});
 export const useUpdateNotificationStatus=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.updateNotificationStatus(slug,id,payload)});
 export const useSyncSocialConnection=(slug:string,id:string)=>useMutation({mutationFn:()=>api.syncSocialConnection(slug,id)});
+export const useSocialConnections=(slug:string)=>useQuery({queryKey:["social-connections",slug],queryFn:()=>api.listSocialConnections(slug),enabled:Boolean(slug)});
+export const useCreateSocialConnection=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createSocialConnection(slug,payload)});
+export const useUpdateSocialConnection=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.updateSocialConnection(slug,id,payload)});
 export const useWebsiteSettings=(slug:string)=>useQuery({queryKey:["website-settings",slug],queryFn:()=>api.getWebsiteSettings(slug),enabled:Boolean(slug)});
 export const useUpdateWebsiteSettings=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateWebsiteSettings(slug,payload)});
 export const useCreateWebsiteContent=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createWebsiteContent(slug,payload)});
