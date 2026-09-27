@@ -122,6 +122,7 @@ This log records completed implementation slices and verification status.
 - Social integration module completion: live tenant social directory, channel creation, enable/disable controls, provider sync actions, and social connection isolation tests.
 - Reports and audit module completion: live appointment KPIs, status breakdown, queue counts, tenant audit activity viewer, refresh/empty states, and reporting isolation tests.
 - Hospital directory module completion: live tenant department, doctor, and service lists with API-backed creation flows replacing static directory screens.
+- Five-module operations batch: live branch directory, staff directory, reminder worklist, doctor availability view, and public patient-facing service directory connected to tenant APIs.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
