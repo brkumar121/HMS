@@ -58,6 +58,9 @@ export const useSocialConnections=(slug:string)=>useQuery({queryKey:["social-con
 export const useCreateSocialConnection=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createSocialConnection(slug,payload)});
 export const useUpdateSocialConnection=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.updateSocialConnection(slug,id,payload)});
 export const useWebsiteSettings=(slug:string)=>useQuery({queryKey:["website-settings",slug],queryFn:()=>api.getWebsiteSettings(slug),enabled:Boolean(slug)});
+export const useWebsiteThemeSnapshots=(slug:string)=>useQuery({queryKey:["website-theme-snapshots",slug],queryFn:()=>api.listWebsiteThemeSnapshots(slug),enabled:Boolean(slug)});
+export const useCreateWebsiteThemeSnapshot=(slug:string)=>useMutation({mutationFn:()=>api.createWebsiteThemeSnapshot(slug)});
+export const useRestoreWebsiteThemeSnapshot=(slug:string)=>useMutation({mutationFn:(id:string)=>api.restoreWebsiteThemeSnapshot(slug,id)});
 export const useCustomDomains=(slug:string)=>useQuery({queryKey:["custom-domains",slug],queryFn:()=>api.listCustomDomains(slug),enabled:Boolean(slug)});
 export const useAddCustomDomain=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.addCustomDomain(slug,payload)});
 export const useVerifyCustomDomain=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.verifyCustomDomain(slug,id,payload)});

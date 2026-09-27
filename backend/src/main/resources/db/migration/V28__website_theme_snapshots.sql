@@ -1,0 +1,2 @@
+create table website_theme_snapshots (id uuid primary key, tenant_id uuid not null references tenants(id) on delete cascade, logo_url varchar(500), primary_color varchar(20), secondary_color varchar(20), font_family varchar(100), tagline varchar(300), contact_phone varchar(40), contact_email varchar(180), address varchar(500), facebook_url varchar(500), instagram_url varchar(500), youtube_url varchar(500), created_at timestamp with time zone not null);
+create index idx_theme_snapshots_tenant on website_theme_snapshots(tenant_id, created_at desc);
