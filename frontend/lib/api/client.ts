@@ -68,6 +68,7 @@ export const prioritizeQueueToken = (slug: string, tokenId: string, payload: unk
 export const updateQueueTokenStatus = (slug: string, tokenId: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/queue/${tokenId}/status`, { method: "PATCH", body: JSON.stringify(payload) });
 export const queueNotification = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/notifications`, { method: "POST", body: JSON.stringify(payload) });
 export const retryNotification = (slug: string, id: string) => apiRequest(`/api/hospitals/${slug}/notifications/${id}/retry`, { method: "POST" });
+export const updateNotificationStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/notifications/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });
 export const createReminder = (slug: string, appointmentId: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/reminders/appointments/${appointmentId}`, { method: "POST", body: JSON.stringify(payload) });
 export const createFollowUp = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/follow-ups`, { method: "POST", body: JSON.stringify(payload) });
 export const updateFollowUpStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/follow-ups/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });

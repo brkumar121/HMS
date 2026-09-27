@@ -24,4 +24,7 @@ export const useCreateReminder=(slug:string,appointmentId:string)=>useMutation({
 export const useCreateFollowUp=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createFollowUp(slug,payload)});
 export const useUpdateFollowUpStatus=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateFollowUpStatus(slug,id,payload)});
 export const useQueueNotification=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.queueNotification(slug,payload)});
+export const useNotifications=(slug:string)=>useQuery({queryKey:["notifications",slug],queryFn:()=>api.listNotifications(slug),enabled:Boolean(slug)});
+export const useRetryNotification=(slug:string)=>useMutation({mutationFn:(id:string)=>api.retryNotification(slug,id)});
+export const useUpdateNotificationStatus=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.updateNotificationStatus(slug,id,payload)});
 export const useSyncSocialConnection=(slug:string,id:string)=>useMutation({mutationFn:()=>api.syncSocialConnection(slug,id)});
