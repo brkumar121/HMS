@@ -52,9 +52,13 @@ This log records completed implementation slices and verification status.
 - Booking policy enforcement: subscription pause/cancellation/appointment limits now block new bookings.
 - Patient intake enforcement: configured hospital ID and ABHA required rules now apply to staff and public booking.
 - Tenant onboarding: platform tenant creation endpoint with slug and contact validation.
+- Frontend operations dashboard: role-oriented hospital workspace entry point with overview, appointments, queue, and patient views.
+- Public hospital frontend: profile/contact page with appointment entry point.
+- Public booking frontend: patient-facing appointment request form route.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
 
 - Appointment controller tests pass independently: 2 tests.
 - Full backend suite passes: 18 tests, 0 failures, 0 errors.
+- Frontend build verification pending because `frontend/node_modules` is not installed in the workspace.
