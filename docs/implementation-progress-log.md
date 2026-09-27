@@ -26,6 +26,7 @@ This log records completed implementation slices and verification status.
 - Hospital branches: tenant-scoped branch/location records with code, address, phone, and active state.
 - Doctor services: validated tenant-scoped doctor-to-service assignment endpoint.
 - Public directory: patient-safe published doctors, active departments, and public services endpoints with tenant isolation.
+- Patient identifiers: tenant configuration for hospital-defined patient ID labels, visibility/required rules, formats, ABHA enablement, requirement, and consent text.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification

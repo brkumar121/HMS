@@ -490,7 +490,7 @@ Done when:
 
 Goal: support appointment request, confirmation, reschedule, cancellation, check-in, completion, and no-show.
 
-Progress: Patient capture, appointment creation, and controlled status transitions are implemented. The current slice supports tenant-scoped patient reuse by phone, hospital patient ID and optional ABHA capture, requested status, source, reason, notes, doctor-slot duplicate protection, confirmation, check-in, completion, cancellation, no-show, and reschedule transitions.
+Progress: Patient capture, identifier configuration, appointment creation, and controlled status transitions are implemented. The current slice supports tenant-scoped patient reuse by phone, hospital patient ID and optional ABHA capture, requested status, source, reason, notes, doctor-slot duplicate protection, confirmation, check-in, completion, cancellation, no-show, and reschedule transitions.
 
 Build:
 
