@@ -103,6 +103,7 @@ This log records completed implementation slices and verification status.
 - Content lifecycle slices: drafts, published content, archive, and social preview.
 - Staff governance slices: role permissions and staff activity.
 - Detailed reporting slices: appointment and queue reports.
+- Frontend API integration contracts: typed client calls for public profile, doctors, services, content, pages, availability, booking, appointments, patients, queue, staff, branches, subscriptions, payments, reminders, notifications, social connections, reports, and audit logs.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
