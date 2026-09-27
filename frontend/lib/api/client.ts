@@ -40,6 +40,7 @@ export const getDoctorSlots = (slug: string, doctorId: string, date: string) => 
 export const createPublicAppointment = (slug: string, payload: unknown) => apiRequest(`/api/public/hospitals/${slug}/appointments`, { method: "POST", body: JSON.stringify(payload) });
 export const getPublicAppointmentStatus = (slug: string, appointmentId: string, phone: string) => apiRequest(`/api/public/hospitals/${slug}/appointments/status?appointmentId=${encodeURIComponent(appointmentId)}&phone=${encodeURIComponent(phone)}`);
 export const joinPublicWaitlist = (slug: string, payload: unknown) => apiRequest(`/api/public/hospitals/${slug}/waitlist`, { method: "POST", body: JSON.stringify(payload) });
+export const publicCheckIn = (slug: string, payload: unknown) => apiRequest(`/api/public/hospitals/${slug}/check-in`, { method: "POST", body: JSON.stringify(payload) });
 export const listWaitlist = (slug: string) => apiRequest(`/api/hospitals/${slug}/waitlist`);
 export const updateWaitlistStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/waitlist/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });
 export const listAppointments = (slug: string) => apiRequest(`/api/hospitals/${slug}/appointments`);
