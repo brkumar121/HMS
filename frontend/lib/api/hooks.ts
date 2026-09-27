@@ -2,6 +2,7 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import * as api from "./client";
 export const useHospitalProfile=(slug:string)=>useQuery({queryKey:["hospital-profile",slug],queryFn:()=>api.getHospitalProfile(slug),enabled:Boolean(slug)});
+export const useApiHealth=()=>useQuery({queryKey:["api-health"],queryFn:()=>api.getApiHealth()});
 export const useTenants=()=>useQuery({queryKey:["tenants"],queryFn:()=>api.listTenants()});
 export const useCreateTenant=()=>useMutation({mutationFn:(payload:unknown)=>api.createTenant(payload)});
 export const usePublicDoctors=(slug:string)=>useQuery({queryKey:["public-doctors",slug],queryFn:()=>api.getPublicDoctors(slug),enabled:Boolean(slug)});

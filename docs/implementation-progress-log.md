@@ -127,6 +127,7 @@ This log records completed implementation slices and verification status.
 - Five-module workflow batch: staff activation/suspension, live queue display with call action, reception payment verification, reminder scheduling for appointments, and public website page consumption workflows.
 - Five-module patient experience batch: public booking submission, patient mobile appointments, patient mobile profile context, doctor mobile rounds, and authenticated staff session entry workflows connected to live APIs.
 - Five-module workflow batch: branch activation, mobile website/page status, patient reminder viewing, appointment detail actions, and website page administration consumption connected to tenant APIs.
+- Ten-screen mobile role batch: live admin branches/staff/approvals, platform billing/health, doctor follow-ups/availability/patient context, and reception appointment search/check-in screens.
 - Verification: clean full backend suite passes with 26 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
