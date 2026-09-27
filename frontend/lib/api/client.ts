@@ -38,6 +38,7 @@ export const getPublicPages = (slug: string) => apiRequest(`/api/public/hospital
 export const getPublicWebsiteSettings = (slug: string) => apiRequest(`/api/public/hospitals/${slug}/website/settings`);
 export const getDoctorSlots = (slug: string, doctorId: string, date: string) => apiRequest(`/api/public/hospitals/${slug}/doctors/${doctorId}/availability?date=${encodeURIComponent(date)}`);
 export const createPublicAppointment = (slug: string, payload: unknown) => apiRequest(`/api/public/hospitals/${slug}/appointments`, { method: "POST", body: JSON.stringify(payload) });
+export const getPublicAppointmentStatus = (slug: string, appointmentId: string, phone: string) => apiRequest(`/api/public/hospitals/${slug}/appointments/status?appointmentId=${encodeURIComponent(appointmentId)}&phone=${encodeURIComponent(phone)}`);
 export const listAppointments = (slug: string) => apiRequest(`/api/hospitals/${slug}/appointments`);
 export const searchAppointments = (slug: string, query: string) => apiRequest(`/api/hospitals/${slug}/appointment-search?patientName=${encodeURIComponent(query)}`);
 export const searchPatients = (slug: string, query: string) => apiRequest(`/api/hospitals/${slug}/patients?query=${encodeURIComponent(query)}`);
