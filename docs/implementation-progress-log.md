@@ -143,3 +143,4 @@ This log records completed implementation slices and verification status.
 - Route-level RBAC enforcement: production mode now restricts platform APIs to platform owners and separates hospital administration, operational, clinical, and website/social write actions by staff role.
 - Data portability exports: tenant-safe CSV downloads are available for appointments, patients, audit activity, and website content, with administrative-role protection and escaped free-text fields.
 - Custom domain delivery foundation: tenant-scoped domain registration, normalized domain validation, DNS-token verification state, SSL readiness state, disable/fallback metadata, Flyway migration, and frontend API hooks are implemented.
+- SaaS billing operations: subscription invoice persistence, invoice list/create/status workflows, tax and currency totals, paid/past-due/void lifecycle, due-date validation, tenant isolation, and frontend invoice API hooks are implemented.

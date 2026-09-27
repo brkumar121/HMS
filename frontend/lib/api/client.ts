@@ -85,6 +85,9 @@ export const updateFollowUpStatus = (slug: string, id: string, payload: unknown)
 export const syncSocialConnection = (slug: string, id: string) => apiRequest(`/api/hospitals/${slug}/social/connections/${id}/sync`, { method: "POST" });
 export const updatePaymentSettings = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/appointment-payments`, { method: "PUT", body: JSON.stringify(payload) });
 export const updateSubscription = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/subscription`, { method: "PUT", body: JSON.stringify(payload) });
+export const listSubscriptionInvoices = (slug: string) => apiRequest(`/api/hospitals/${slug}/subscription/invoices`);
+export const createSubscriptionInvoice = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/subscription/invoices`, { method: "POST", body: JSON.stringify(payload) });
+export const updateSubscriptionInvoiceStatus = (slug: string, id: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/subscription/invoices/${id}/status`, { method: "PATCH", body: JSON.stringify(payload) });
 export const updatePatientIdentifiers = (slug: string, payload: unknown) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`, { method: "PUT", body: JSON.stringify(payload) });
 export const getPatientIdentifiers = (slug: string) => apiRequest(`/api/hospitals/${slug}/patient-identifiers`);
 export const getWebsiteSettings = (slug: string) => apiRequest(`/api/hospitals/${slug}/website/settings`);

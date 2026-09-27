@@ -31,6 +31,9 @@ export const useAppointmentReport=(slug:string)=>useQuery({queryKey:["appointmen
 export const useQueueReport=(slug:string)=>useQuery({queryKey:["queue-report",slug],queryFn:()=>api.getQueueReport(slug),enabled:Boolean(slug)});
 export const useAuditLog=(slug:string)=>useQuery({queryKey:["audit-log",slug],queryFn:()=>api.getAuditLog(slug),enabled:Boolean(slug)});
 export const useSubscription=(slug:string)=>useQuery({queryKey:["subscription",slug],queryFn:()=>api.getSubscription(slug),enabled:Boolean(slug)});
+export const useSubscriptionInvoices=(slug:string)=>useQuery({queryKey:["subscription-invoices",slug],queryFn:()=>api.listSubscriptionInvoices(slug),enabled:Boolean(slug)});
+export const useCreateSubscriptionInvoice=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createSubscriptionInvoice(slug,payload)});
+export const useUpdateSubscriptionInvoiceStatus=(slug:string)=>useMutation({mutationFn:({id,payload}:{id:string;payload:unknown})=>api.updateSubscriptionInvoiceStatus(slug,id,payload)});
 export const usePaymentSettings=(slug:string)=>useQuery({queryKey:["payment-settings",slug],queryFn:()=>api.getPaymentSettings(slug),enabled:Boolean(slug)});
 export const useCreateAppointment=(slug:string)=>useMutation({mutationFn:(payload:unknown)=>api.createPublicAppointment(slug,payload)});
 export const useUpdateAppointmentStatus=(slug:string,id:string)=>useMutation({mutationFn:(payload:unknown)=>api.updateAppointmentStatus(slug,id,payload)});
