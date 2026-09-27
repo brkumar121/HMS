@@ -1,0 +1,1 @@
+import { Upload } from "lucide-react"; import { QuickScreen } from "@/components/admin/quick-screen"; export default function Imports(){return <QuickScreen eyebrow="Data operations" title="Import data" description="Bring existing hospital data into the workspace." icon={Upload} items={["Download template","Upload CSV file","Review validation errors","Start import"]}/>}

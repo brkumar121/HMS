@@ -1,0 +1,1 @@
+import { Download } from "lucide-react"; import { QuickScreen } from "@/components/admin/quick-screen"; export default function Exports(){return <QuickScreen eyebrow="Data operations" title="Export data" description="Generate tenant-scoped exports." icon={Download} items={["Export appointments","Export patients","Export queue history","Export audit log"]}/>}

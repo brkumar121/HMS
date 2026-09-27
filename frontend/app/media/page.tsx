@@ -1,0 +1,1 @@
+import { Images } from "lucide-react"; import { QuickScreen } from "@/components/admin/quick-screen"; export default function Media(){return <QuickScreen eyebrow="Website assets" title="Media library" description="Manage logos, photos, campaign images, and accessibility text." icon={Images} items={["Upload image","Review unused assets","Set alt text","Filter by content"]}/>}
