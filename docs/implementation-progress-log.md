@@ -58,6 +58,9 @@ This log records completed implementation slices and verification status.
 - Reception frontend: searchable queue board with patient calling action and priority visibility.
 - Doctor frontend: daily schedule, next patient, queue, and follow-up summary workspace.
 - Content frontend: website publishing dashboard with content, media, and social status views.
+- Hospital administration frontend: profile, departments, doctors, identifiers, and access settings workspace.
+- Patient portal frontend: upcoming visit, history, patient ID, and appointment discovery workspace.
+- Platform owner frontend: hospital account, subscription, revenue, volume, and support overview.
 - Verification: clean full backend suite passes with 18 tests after queue-token cascade cleanup was aligned with tenant-owned lifecycle data.
 
 ## Verification
