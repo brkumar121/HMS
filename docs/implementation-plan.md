@@ -603,6 +603,8 @@ Done when:
 
 Goal: support categorized hospital website content.
 
+Progress: Categorized tenant content items, draft/published/archived status, slug validation, and public category filtering are implemented.
+
 Build:
 
 - Website pages.
